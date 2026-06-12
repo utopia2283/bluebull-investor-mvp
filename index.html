@@ -1,0 +1,1469 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ICLNet² · Hong Kong’s third credit seat — Investor Brief</title>
+  <meta name="description" content="ICLNet² — Hong Kong’s third credit seat. Quantum-grade privacy computing, AI-native compliance, and a GBA cross-border channel. Consortium of Blue Bull Capital, Ping An One Connect, and the Chinese Academy of Sciences.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0A0F1C">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E63E48' stroke-width='2'><path d='M3 12 L12 3 L21 12 L12 21 Z'/><circle cx='12' cy='12' r='3' fill='%2336D6FF'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+:root {
+  --bg: #0A0F1C;
+  --bg-2: #0F1828;
+  --bg-3: #16223A;
+  --bg-4: #1E2D4D;
+  --line: #1F2C46;
+  --line-2: #2A3A5C;
+  --ink: #F2F1EC;
+  --ink-2: #B7C0CF;
+  --ink-3: #6E7C92;
+  --ink-4: #48566B;
+  --red: #E63E48;
+  --red-2: #FF5860;
+  --red-glow: rgba(230, 62, 72, 0.18);
+  --cyan: #36D6FF;
+  --cyan-2: #00B8E6;
+  --cyan-glow: rgba(54, 214, 255, 0.18);
+  --gold: #F2C94C;
+  --gold-2: #D9A93B;
+  --green: #2EE6A0;
+  --green-glow: rgba(46, 230, 160, 0.18);
+  --grad-red: linear-gradient(135deg, #E63E48 0%, #FF5860 100%);
+  --grad-cyan: linear-gradient(135deg, #36D6FF 0%, #00B8E6 100%);
+  --grad-gold: linear-gradient(135deg, #F2C94C 0%, #D9A93B 100%);
+  --grad-bg: radial-gradient(1200px 600px at 80% -10%, rgba(54, 214, 255, 0.08), transparent 60%),
+             radial-gradient(900px 500px at 0% 20%, rgba(230, 62, 72, 0.06), transparent 60%);
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 24px rgba(0,0,0,0.35);
+  --shadow-2: 0 1px 0 rgba(255,255,255,0.05) inset, 0 16px 48px rgba(0,0,0,0.5);
+  --radius: 10px;
+  --radius-lg: 16px;
+  --max: 1240px;
+  --pad: clamp(20px, 4vw, 56px);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  background-image: var(--grad-bg);
+  color: var(--ink);
+  font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.005em;
+  overflow-x: hidden;
+}
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+.mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace; letter-spacing: 0.01em; }
+.cjk  { font-family: 'Noto Sans TC', 'Inter', sans-serif; }
+
+.container { max-width: var(--max); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+.section   { padding: clamp(80px, 11vw, 140px) 0; position: relative; }
+.section.tight { padding: clamp(60px, 8vw, 100px) 0; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  color: var(--ink-3);
+  margin-bottom: 24px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--red); }
+
+h1, h2, h3, h4 { font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif; margin: 0; line-height: 1.1; letter-spacing: -0.02em; }
+h1 { font-size: clamp(40px, 6.4vw, 84px); font-weight: 700; letter-spacing: -0.035em; }
+h2 { font-size: clamp(30px, 4.4vw, 56px); font-weight: 600; letter-spacing: -0.025em; }
+h3 { font-size: clamp(20px, 2.2vw, 28px); font-weight: 600; letter-spacing: -0.015em; }
+h4 { font-size: 18px; font-weight: 600; }
+.lead { font-size: clamp(17px, 1.4vw, 20px); color: var(--ink-2); max-width: 64ch; line-height: 1.55; }
+.muted { color: var(--ink-3); }
+.tiny  { font-size: 13px; color: var(--ink-3); letter-spacing: 0.04em; }
+
+/* --- Nav --- */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: rgba(10, 15, 28, 0.72);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; flex-shrink: 0; }
+.brand .mark { width: 22px; height: 22px; }
+.brand .word { font-family: 'Space Grotesk', sans-serif; font-size: 17px; letter-spacing: -0.01em; }
+.brand .word b { color: var(--ink); font-weight: 700; }
+.brand .word i { color: var(--red); font-style: normal; font-weight: 600; }
+.brand .word sup { font-size: 9px; color: var(--ink-3); margin-left: 1px; }
+.nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: nowrap; }
+.nav-links a { font-size: 13px; color: var(--ink-2); transition: color .2s var(--ease); white-space: nowrap; }
+.nav-links a:hover { color: var(--ink); }
+@media (max-width: 960px) { .nav-links { display: none; } }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 40px; padding: 0 18px;
+  font-size: 14px; font-weight: 500;
+  border-radius: 999px; transition: all .25s var(--ease);
+  border: 1px solid var(--line-2); background: var(--bg-2); color: var(--ink);
+  white-space: nowrap;
+}
+.btn:hover { border-color: var(--ink-3); transform: translateY(-1px); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+.btn-primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.btn-primary:hover { background: var(--ink-2); border-color: var(--ink-2); }
+.btn-ghost { background: transparent; }
+.btn .arr { transition: transform .25s var(--ease); }
+.btn:hover .arr { transform: translateX(3px); }
+
+/* --- Hero --- */
+.hero { padding-top: clamp(80px, 10vw, 120px); padding-bottom: clamp(80px, 10vw, 140px); position: relative; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+.hero h1 .grad { background: var(--grad-red); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero h1 .grad-cyan { background: var(--grad-cyan); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .stack-cn { display: block; font-size: clamp(18px, 2.2vw, 26px); color: var(--ink-2); font-weight: 500; margin-top: 16px; letter-spacing: 0.01em; }
+.hero .kicker { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-3); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 24px; }
+.hero .kicker .dot { display: inline-block; width: 8px; height: 8px; background: var(--green); border-radius: 50%; margin-right: 10px; box-shadow: 0 0 12px var(--green); animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+.hero-cta { display: flex; gap: 12px; margin-top: 40px; flex-wrap: wrap; }
+.hero-meta { display: flex; gap: 32px; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.hero-meta .item .k { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.16em; text-transform: uppercase; }
+.hero-meta .item .v { font-size: 14px; color: var(--ink); margin-top: 4px; }
+
+.network {
+  position: relative; aspect-ratio: 1/1; max-width: 520px; margin: 0 auto;
+  background: radial-gradient(circle at 50% 50%, rgba(54,214,255,0.04), transparent 60%);
+}
+.network svg { width: 100%; height: 100%; }
+.network .pulse { animation: nodePulse 3s var(--ease) infinite; }
+.network .pulse.d1 { animation-delay: 0s; }
+.network .pulse.d2 { animation-delay: .6s; }
+.network .pulse.d3 { animation-delay: 1.2s; }
+.network .pulse.d4 { animation-delay: 1.8s; }
+.network .pulse.d5 { animation-delay: 2.4s; }
+@keyframes nodePulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+.network .ring { transform-origin: 250px 250px; animation: spin 60s linear infinite; }
+.network .ring.r2 { animation-duration: 90s; animation-direction: reverse; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* --- Partners strip --- */
+.partners { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 28px 0; background: rgba(15, 24, 40, 0.4); }
+.partners .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.18em; text-transform: uppercase; text-align: center; margin-bottom: 18px; }
+.partners-list { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(20px, 6vw, 64px); align-items: center; }
+.partner { display: flex; align-items: center; gap: 10px; color: var(--ink-2); font-size: 14px; letter-spacing: 0.02em; }
+.partner .glyph { width: 22px; height: 22px; color: var(--ink-3); }
+.partner b { color: var(--ink); font-weight: 600; }
+.partner .en { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); margin-left: 4px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* --- Section: Problem --- */
+.problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+@media (max-width: 800px) { .problem-grid { grid-template-columns: 1fr; } }
+.problem-card {
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 28px; box-shadow: var(--shadow-1); position: relative; overflow: hidden;
+}
+.problem-card .ix { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.16em; }
+.problem-card .big { font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--ink); margin: 16px 0 12px; letter-spacing: -0.025em; line-height: 1.05; }
+.problem-card .big .accent { color: var(--red); }
+.problem-card .big .accent-cyan { color: var(--cyan); }
+.problem-card .big .accent-gold { color: var(--gold); }
+.problem-card p { color: var(--ink-2); margin: 0 0 12px; font-size: 15px; }
+.problem-card .cn { display: block; font-size: 14px; color: var(--ink-2); margin-top: 8px; }
+
+/* --- Iron Triangle --- */
+.tri-wrap { position: relative; margin: 80px auto 0; max-width: 880px; aspect-ratio: 1/0.95; }
+.tri-svg { width: 100%; height: 100%; }
+.tri-label { position: absolute; font-family: 'Space Grotesk', sans-serif; }
+.tri-label .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.18em; }
+.tri-label .nm { font-size: 18px; font-weight: 600; color: var(--ink); margin-top: 4px; }
+.tri-label .sub { font-size: 13px; color: var(--ink-2); margin-top: 6px; max-width: 220px; }
+@media (max-width: 800px) { .tri-wrap { max-width: 100%; } .tri-label .sub { max-width: 160px; } .tri-label .nm { font-size: 15px; } }
+
+/* --- Three Engines --- */
+.engines { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+@media (max-width: 800px) { .engines { grid-template-columns: 1fr; } }
+.engine {
+  background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg-3) 100%);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 32px; box-shadow: var(--shadow-1); position: relative; overflow: hidden;
+  transition: transform .3s var(--ease), border-color .3s var(--ease);
+}
+.engine:hover { transform: translateY(-2px); border-color: var(--line-2); }
+.engine::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; }
+.engine.capital::before { background: var(--grad-gold); }
+.engine.ai::before { background: var(--grad-red); }
+.engine.crypto::before { background: var(--grad-cyan); }
+.engine .role { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.16em; text-transform: uppercase; }
+.engine.capital .role { color: var(--gold); }
+.engine.ai .role { color: var(--red); }
+.engine.crypto .role { color: var(--cyan); }
+.engine h3 { margin-top: 12px; }
+.engine .tagline { color: var(--ink-2); margin: 12px 0 20px; font-size: 15px; }
+.engine .facts { list-style: none; padding: 0; margin: 0; }
+.engine .facts li { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; align-items: start; }
+.engine .facts li .k { color: var(--ink-3); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding-top: 2px; }
+.engine .facts li .v { color: var(--ink); }
+.engine .price { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em; }
+
+/* --- Architecture / Stack --- */
+.stack { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; margin-top: 56px; }
+@media (max-width: 900px) { .stack { grid-template-columns: minmax(0, 1fr); } .stack > * { min-width: 0; } }
+.layer {
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 28px; box-shadow: var(--shadow-1); position: relative; cursor: pointer; min-width: 0; max-width: 100%; width: 100%; box-sizing: border-box; overflow-wrap: anywhere; word-break: break-word;
+  transition: border-color .25s var(--ease), transform .25s var(--ease);
+}
+.layer:hover { border-color: var(--line-2); transform: translateY(-2px); }
+.layer.active { border-color: var(--cyan); box-shadow: 0 0 0 1px var(--cyan-glow), var(--shadow-1); }
+.layer .lbl { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 12px; }
+.layer h3 { margin-bottom: 10px; }
+.layer p { color: var(--ink-2); margin: 0 0 16px; font-size: 15px; }
+.layer ul { list-style: none; padding: 0; margin: 0; }
+.layer ul li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; font-size: 14px; color: var(--ink-2); border-top: 1px dashed var(--line); }
+.layer ul li:first-child { border-top: 0; }
+.layer ul li::before { content: ''; width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
+.layer.crypto ul li::before { background: var(--cyan); }
+.layer.ai ul li::before { background: var(--red); }
+.layer.network ul li::before { background: var(--gold); }
+.layer.app ul li::before { background: var(--green); }
+.layer .tap { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink-3); margin-top: 16px; letter-spacing: 0.12em; text-transform: uppercase; }
+.layer.active .tap { color: var(--cyan); }
+
+/* --- Interactive: FinancialGPT demo --- */
+.demo {
+  margin-top: 56px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+}
+.demo-head { padding: 24px 28px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; min-width: 0; }
+.demo-head > * { min-width: 0; }
+.demo-head .title { white-space: normal; overflow-wrap: anywhere; }
+@media (max-width: 700px) { .demo-head { padding: 20px; flex-direction: column; align-items: flex-start; } .demo-scenarios { grid-template-columns: 1fr; } }
+.demo-head .title { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
+.demo-head .title b { color: var(--ink); }
+.demo-head .live { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--green); letter-spacing: 0.14em; text-transform: uppercase; }
+.demo-head .live .dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; box-shadow: 0 0 10px var(--green); animation: pulse 1.6s ease-in-out infinite; }
+.demo-body { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); min-height: 460px; }
+@media (max-width: 900px) { .demo-body { grid-template-columns: minmax(0, 1fr); } .demo-body > * { min-width: 0; } }
+.demo-input { padding: 28px; border-right: 1px solid var(--line); background: rgba(15, 24, 40, 0.5); }
+@media (max-width: 900px) { .demo-input { border-right: 0; border-bottom: 1px solid var(--line); } }
+.demo-input h3 { font-size: 18px; }
+.demo-input .hint { color: var(--ink-3); font-size: 13px; margin: 8px 0 20px; }
+.demo-scenarios { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+.scenario-btn {
+  text-align: left; padding: 14px;
+  background: var(--bg-3); border: 1px solid var(--line); border-radius: 8px;
+  color: var(--ink-2); font-size: 13px; line-height: 1.45;
+  transition: all .2s var(--ease);
+}
+.scenario-btn:hover { border-color: var(--ink-3); color: var(--ink); }
+.scenario-btn.active { border-color: var(--cyan); color: var(--ink); background: rgba(54, 214, 255, 0.06); }
+.scenario-btn .ix { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--cyan); letter-spacing: 0.12em; margin-bottom: 4px; }
+.demo-textarea {
+  width: 100%; min-height: 110px; resize: vertical;
+  background: var(--bg); border: 1px solid var(--line-2); border-radius: 8px;
+  color: var(--ink); font: 14px/1.55 'Inter', sans-serif;
+  padding: 12px 14px; outline: none;
+  transition: border-color .2s var(--ease);
+}
+.demo-textarea:focus { border-color: var(--cyan); }
+.demo-run { margin-top: 16px; width: 100%; justify-content: center; height: 44px; }
+
+.demo-output { padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+.demo-step {
+  display: grid; grid-template-columns: 36px 1fr; gap: 14px;
+  padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg-3);
+  opacity: 0.4; transform: translateY(4px);
+  transition: all .35s var(--ease);
+}
+.demo-step.done { opacity: 1; transform: translateY(0); border-color: var(--line-2); }
+.demo-step.running { opacity: 1; transform: translateY(0); border-color: var(--cyan); box-shadow: 0 0 0 2px var(--cyan-glow); }
+.demo-step .icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--bg); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  color: var(--ink-3); flex-shrink: 0;
+}
+.demo-step.done .icon { color: var(--green); border-color: var(--green); background: var(--green-glow); }
+.demo-step.running .icon { color: var(--cyan); border-color: var(--cyan); background: var(--cyan-glow); }
+.demo-step .label { font-size: 14px; color: var(--ink-2); }
+.demo-step .label b { color: var(--ink); font-weight: 600; }
+.demo-step .meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); margin-top: 4px; letter-spacing: 0.04em; }
+.demo-decision { margin-top: 8px; padding: 18px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg-2); display: none; }
+.demo-decision.show { display: block; }
+.demo-decision .v { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; }
+.demo-decision.approve .v { color: var(--green); }
+.demo-decision.review .v { color: var(--gold); }
+.demo-decision.decline .v { color: var(--red); }
+.demo-decision .row { display: grid; grid-template-columns: 110px 1fr; gap: 8px; font-size: 13px; padding: 4px 0; }
+.demo-decision .row .k { font-family: 'JetBrains Mono', monospace; color: var(--ink-3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding-top: 2px; }
+.demo-decision .row .v { color: var(--ink); }
+
+/* --- Cost Calculator --- */
+.calc {
+  margin-top: 56px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 32px;
+  box-shadow: var(--shadow-1);
+  min-width: 0;
+}
+@media (max-width: 900px) { .calc { grid-template-columns: minmax(0, 1fr); } .calc > * { min-width: 0; } }
+.calc h3 { font-size: 22px; }
+.calc .sub { color: var(--ink-3); font-size: 13px; margin-top: 4px; }
+.calc-inputs { display: flex; flex-direction: column; gap: 20px; margin-top: 20px; }
+.calc-input .top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.calc-input .top .lbl { font-size: 13px; color: var(--ink-2); }
+.calc-input .top .val { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--ink); font-weight: 500; }
+.calc-input input[type=range] {
+  width: 100%; height: 4px; -webkit-appearance: none; appearance: none;
+  background: var(--line-2); border-radius: 2px; outline: none;
+}
+.calc-input input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--ink); border: 0; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.calc-input input[type=range]::-moz-range-thumb {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--ink); border: 0; cursor: pointer;
+}
+.calc-output { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.calc-output .big-save { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 600; letter-spacing: -0.025em; color: var(--green); line-height: 1; }
+.calc-output .big-save .suffix { font-size: 18px; color: var(--ink-3); margin-left: 8px; }
+.calc-output .pct { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--green); letter-spacing: 0.08em; margin-top: 6px; }
+.calc-output .row { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 13px; margin-top: 18px; }
+.calc-output .row .k { color: var(--ink-3); }
+.calc-output .row .v { color: var(--ink); font-family: 'JetBrains Mono', monospace; }
+.calc-output .row .v.red { color: var(--red); text-decoration: line-through; text-decoration-color: var(--red-glow); }
+.calc-output .row .v.green { color: var(--green); }
+.bar-wrap { display: grid; grid-template-columns: 90px 1fr; gap: 10px; align-items: center; margin-top: 12px; }
+.bar-wrap .lbl { font-size: 11px; color: var(--ink-3); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+.bar-wrap .bar { height: 8px; background: var(--bg-2); border-radius: 4px; overflow: hidden; position: relative; }
+.bar-wrap .bar > div { height: 100%; transition: width .35s var(--ease); }
+
+/* --- Business model dual track --- */
+.dual { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; margin-top: 56px; }
+@media (max-width: 800px) { .dual { grid-template-columns: 1fr; } }
+.track {
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 32px; position: relative; overflow: hidden;
+}
+.track::after { content: ''; position: absolute; right: -60px; top: -60px; width: 200px; height: 200px; border-radius: 50%; opacity: 0.06; }
+.track.t1::after { background: var(--grad-cyan); }
+.track.t2::after { background: var(--grad-red); }
+.track .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.18em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--line-2); border-radius: 999px; }
+.track h3 { margin: 16px 0 8px; }
+.track .audience { color: var(--ink-2); margin: 0 0 20px; font-size: 15px; }
+.track .row { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; align-items: start; }
+.track .row .k { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.08em; padding-top: 2px; }
+.track .row .v { color: var(--ink); }
+
+/* --- GBA Cross-Border Flow --- */
+.flow {
+  margin-top: 56px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 32px;
+  align-items: start;
+  min-width: 0;
+}
+@media (max-width: 900px) { .flow { grid-template-columns: minmax(0, 1fr); } .flow > * { min-width: 0; } }
+.flow h3 { font-size: 22px; }
+.flow .sub { color: var(--ink-3); font-size: 13px; margin-top: 4px; }
+.flow-svg { aspect-ratio: 1.4/1; max-width: 100%; }
+.flow-steps { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.flow-step {
+  display: grid; grid-template-columns: 28px 1fr auto; gap: 12px;
+  padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg-3); cursor: pointer;
+  transition: all .2s var(--ease);
+  text-align: left; width: 100%;
+  align-items: start;
+}
+.flow-step:hover { border-color: var(--ink-3); }
+.flow-step.in { border-color: var(--cyan); background: rgba(54, 214, 255, 0.05); }
+.flow-step .num {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--bg); border: 1px solid var(--line-2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3);
+}
+.flow-step.in .num { background: var(--cyan); color: var(--bg); border-color: var(--cyan); }
+.flow-step .body { font-size: 13px; color: var(--ink-2); }
+.flow-step .body b { color: var(--ink); display: block; font-size: 14px; margin-bottom: 2px; font-weight: 600; }
+.flow-step .ix { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink-3); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 4px; }
+
+/* --- Roadmap --- */
+.road { margin-top: 64px; position: relative; }
+.road-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; flex-wrap: wrap; gap: 16px; }
+.road-line { position: absolute; left: 0; right: 0; top: 24px; height: 1px; background: linear-gradient(90deg, transparent, var(--line-2), var(--line-2), transparent); }
+.road-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
+@media (max-width: 800px) { .road-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px) { .road-grid { grid-template-columns: 1fr; } }
+.stage {
+  position: relative; padding: 20px 18px 18px; padding-top: 60px;
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius);
+  cursor: pointer; transition: all .25s var(--ease);
+}
+.stage:hover { border-color: var(--line-2); }
+.stage.open { background: var(--bg-3); border-color: var(--line-2); }
+.stage .dot { position: absolute; top: 18px; left: 18px; width: 13px; height: 13px; border-radius: 50%; background: var(--bg); border: 2px solid var(--ink-3); }
+.stage.active .dot { background: var(--red); border-color: var(--red); box-shadow: 0 0 0 4px rgba(230, 62, 72, 0.15); }
+.stage .q { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.14em; }
+.stage.active .q { color: var(--red); }
+.stage h3 { margin-top: 6px; font-size: 18px; }
+.stage .more { color: var(--ink-2); font-size: 13px; margin: 10px 0 0; line-height: 1.55; display: none; }
+.stage.open .more { display: block; }
+.stage .toggle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink-3); margin-top: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+.stage.open .toggle { color: var(--cyan); }
+
+/* --- Numbers / Stats --- */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 56px; }
+@media (max-width: 800px) { .stats { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px) { .stats { grid-template-columns: 1fr; } }
+.stat { background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+.stat .v { font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 4vw, 52px); font-weight: 600; letter-spacing: -0.025em; line-height: 1; }
+.stat .v.red { color: var(--red); }
+.stat .v.cyan { color: var(--cyan); }
+.stat .v.gold { color: var(--gold); }
+.stat .v.green { color: var(--green); }
+.stat .k { margin-top: 12px; color: var(--ink-2); font-size: 14px; line-height: 1.5; }
+.stat .k .en { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; }
+
+/* --- Ask --- */
+.ask {
+  background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%);
+  border: 1px solid var(--line-2); border-radius: var(--radius-lg);
+  padding: clamp(40px, 5vw, 72px); position: relative; overflow: hidden;
+}
+.ask::before {
+  content: ''; position: absolute; top: -200px; right: -200px; width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(230, 62, 72, 0.15), transparent 60%);
+  pointer-events: none;
+}
+.ask h2 { max-width: 22ch; }
+.ask .lead { margin-top: 24px; }
+.ask-actions { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.ask-meta { display: flex; gap: 32px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.ask-meta .item .k { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.16em; text-transform: uppercase; }
+.ask-meta .item .v { font-size: 14px; color: var(--ink); margin-top: 4px; }
+
+/* --- Footer --- */
+footer { border-top: 1px solid var(--line); padding: 48px 0 32px; margin-top: 60px; background: rgba(10, 15, 28, 0.5); }
+.foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 40px; }
+@media (max-width: 800px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px) { .foot-grid { grid-template-columns: 1fr; } }
+.foot h5 { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-3); letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 14px; font-weight: 500; }
+.foot p, .foot a { color: var(--ink-2); font-size: 14px; line-height: 1.7; }
+.foot a:hover { color: var(--ink); }
+.foot ul { list-style: none; padding: 0; margin: 0; }
+.foot-bottom { display: flex; justify-content: space-between; padding-top: 28px; border-top: 1px solid var(--line); color: var(--ink-3); font-size: 13px; flex-wrap: wrap; gap: 12px; }
+
+/* --- Reveal --- */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+::selection { background: var(--red); color: var(--ink); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="ICLNet²">
+      <svg class="mark" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12 L12 3 L21 12 L12 21 Z" stroke="#E63E48"/><circle cx="12" cy="12" r="3" fill="#36D6FF"/></svg>
+      <span class="word"><b>ICLNet</b><i>²</i></span>
+    </a>
+    <div class="nav-links">
+      <a href="#demo">演示 / Demo</a>
+      <a href="#problem">問題 / Problem</a>
+      <a href="#triangle">三角 / Triangle</a>
+      <a href="#engines">引擎 / Engines</a>
+      <a href="#calculator">成本 / Calc</a>
+      <a href="#flow">GBA / 跨境</a>
+      <a href="#roadmap">路線 / Roadmap</a>
+      <a href="#ask" class="btn">Investor Brief →</a>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero container" id="top">
+  <div class="hero-grid">
+    <div>
+      <div class="kicker"><span class="dot"></span>Investor brief · 2026 Q3</div>
+      <h1>
+        Hong Kong’s credit<br>
+        system is <span class="grad">40 years behind.</span><br>
+        <span class="grad-cyan">We’re rebuilding it.</span>
+      </h1>
+      <span class="stack-cn cjk">重新設計香港金融的信用神經網網 — ICLNet²。</span>
+      <p class="lead" style="margin-top: 32px;">
+        A privacy-computing credit network — the third seat at Hong Kong’s credit table.
+        AI-native compliance, quantum-grade encryption, and a cross-border GBA channel
+        that the legacy US-owned bureau structurally cannot deliver.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#demo">See how it works <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#ask">Investor brief</a>
+      </div>
+      <div class="hero-meta">
+        <div class="item"><div class="k">Status</div><div class="v">Phase 1 · Alliance &amp; entity</div></div>
+        <div class="item"><div class="k">Round</div><div class="v">Strategic · 48–60 mo runway</div></div>
+        <div class="item"><div class="k">Geography</div><div class="v">HK ↔ GBA Mainland</div></div>
+      </div>
+    </div>
+    <div class="network reveal">
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <radialGradient id="ng" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#36D6FF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#36D6FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#36D6FF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#E63E48" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+  <circle cx="250" cy="250" r="220" fill="url(#ng)"/>
+  <g class="ring" stroke="rgba(54,214,255,0.15)" fill="none" stroke-width="0.6">
+    <circle cx="250" cy="250" r="80"/>
+    <circle cx="250" cy="250" r="140"/>
+    <circle cx="250" cy="250" r="200"/>
+  </g>
+  <g class="ring r2" stroke="rgba(230,62,72,0.12)" fill="none" stroke-width="0.6" stroke-dasharray="2 6">
+    <circle cx="250" cy="250" r="110"/>
+    <circle cx="250" cy="250" r="170"/>
+  </g>
+  <g stroke="url(#edge)" stroke-width="0.6" opacity="0.7">
+    <line x1="250" y1="250" x2="80"  y2="120"/>
+    <line x1="250" y1="250" x2="420" y2="120"/>
+    <line x1="250" y1="250" x2="80"  y2="380"/>
+    <line x1="250" y1="250" x2="420" y2="380"/>
+    <line x1="250" y1="250" x2="250" y2="60"/>
+    <line x1="250" y1="250" x2="250" y2="440"/>
+    <line x1="80"  y1="120" x2="420" y2="120"/>
+    <line x1="80"  y1="380" x2="420" y2="380"/>
+    <line x1="80"  y1="120" x2="80"  y2="380"/>
+    <line x1="420" y1="120" x2="420" y2="380"/>
+  </g>
+  <g>
+    <circle class="pulse d1" cx="250" cy="250" r="7" fill="#E63E48"/>
+    <circle class="pulse d2" cx="80"  cy="120" r="5" fill="#36D6FF"/>
+    <circle class="pulse d3" cx="420" cy="120" r="5" fill="#36D6FF"/>
+    <circle class="pulse d4" cx="80"  cy="380" r="5" fill="#F2C94C"/>
+    <circle class="pulse d5" cx="420" cy="380" r="5" fill="#F2C94C"/>
+    <circle class="pulse d1" cx="250" cy="60"  r="4" fill="#F2F1EC"/>
+    <circle class="pulse d3" cx="250" cy="440" r="4" fill="#F2F1EC"/>
+    <circle class="pulse d2" cx="160" cy="250" r="4" fill="#F2F1EC"/>
+    <circle class="pulse d4" cx="340" cy="250" r="4" fill="#F2F1EC"/>
+  </g>
+  <g font-family="JetBrains Mono, monospace" font-size="9" fill="#6E7C92" letter-spacing="2">
+    <text x="260" y="252">CRP</text>
+    <text x="60"  y="110">HK</text>
+    <text x="426" y="110">GBA</text>
+    <text x="60"  y="395">BANK</text>
+    <text x="426" y="395">ML</text>
+  </g>
+</svg>
+</div>
+  </div>
+</header>
+
+
+<section class="section" id="demo">
+  <div class="container">
+    <div class="eyebrow reveal">演示 · See how it works</div>
+    <h2 class="reveal">FinancialGPT<br><span class="cjk" style="color: var(--ink-2); font-weight: 500;">〈個人信貸資料實務守則〉為代碼、不是面板。</span></h2>
+    <p class="lead reveal" style="margin-top: 20px;">
+      Pick a loan scenario. Watch the model run the CCD Code, query the encrypted bureau, route the cross-border
+      signal through MPC, and return a decision — with the full audit trail an LP can interrogate.
+    </p>
+    <div class="demo reveal">
+      <div class="demo-head">
+        <div class="title">ICLNet² <b>FinancialGPT · Compliance Engine</b> · v2.3 live</div>
+        <div class="live"><span class="dot"></span>Live · synthetic data</div>
+      </div>
+      <div class="demo-body">
+        <div class="demo-input">
+          <h3>Loan application</h3>
+          <div class="hint">選一個場景或自己輸入。全部以合成數據驗證。</div>
+          <div class="demo-scenarios" id="scenarios">
+            <button class="scenario-btn active" data-scenario="0"><span class="ix">SCENARIO 01</span>Retail personal loan<br><span class="muted tiny cjk">零售個人貸款</span></button>
+            <button class="scenario-btn" data-scenario="1"><span class="ix">SCENARIO 02</span>SME working capital<br><span class="muted tiny cjk">中小企業買資金</span></button>
+            <button class="scenario-btn" data-scenario="2"><span class="ix">SCENARIO 03</span>Cross-border GBA<br><span class="muted tiny cjk">跨境大灣區</span></button>
+            <button class="scenario-btn" data-scenario="3"><span class="ix">SCENARIO 04</span>Thin-file applicant<br><span class="muted tiny cjk">薄文件申請</span></button>
+          </div>
+          <textarea class="demo-textarea" id="demoInput" placeholder="Or type your own loan scenario…">Applicant: 34, HKID-holder, salaried at MTRC for 7 years. Requesting HKD 250,000 unsecured personal loan, 36-month term. Existing 2 credit cards, 1 auto-loan at 38% util.</textarea>
+          <button class="btn btn-primary demo-run" id="demoRun">→ Run FinancialGPT</button>
+        </div>
+        <div class="demo-output" id="demoOutput">
+          <div class="demo-step" data-step="1">
+            <div class="icon">1</div>
+            <div>
+              <div class="label"><b>Parse · CCD Code compliance gate</b> — strip PII fields outside the lawful purpose</div>
+              <div class="meta" data-meta>· awaiting input</div>
+            </div>
+          </div>
+          <div class="demo-step" data-step="2">
+            <div class="icon">2</div>
+            <div>
+              <div class="label"><b>Query · encrypted bureau signal</b> — MPC-aggregated across 5.5M consumer records</div>
+              <div class="meta" data-meta>· awaiting input</div>
+            </div>
+          </div>
+          <div class="demo-step" data-step="3">
+            <div class="icon">3</div>
+            <div>
+              <div class="label"><b>Score · FinancialGPT inference</b> — CCD-compliant model, full audit trail</div>
+              <div class="meta" data-meta>· awaiting input</div>
+            </div>
+          </div>
+          <div class="demo-step" data-step="4">
+            <div class="icon">4</div>
+            <div>
+              <div class="label"><b>Route · GBA cross-border channel</b> — if applicable, encrypted under 2026 Standard Contract</div>
+              <div class="meta" data-meta>· awaiting input</div>
+            </div>
+          </div>
+          <div class="demo-decision" id="demoDecision">
+            <div class="v" id="decisionV">—</div>
+            <div class="row"><span class="k">Decision</span><span class="v" id="decisionText">—</span></div>
+            <div class="row"><span class="k">Risk score</span><span class="v" id="decisionScore">—</span></div>
+            <div class="row"><span class="k">Amount</span><span class="v" id="decisionAmount">—</span></div>
+            <div class="row"><span class="k">Indicative rate</span><span class="v" id="decisionRate">—</span></div>
+            <div class="row"><span class="k">Manual review</span><span class="v" id="decisionManual">—</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="partners">
+  <div class="container">
+    <div class="label">終極戰術鐵三角 · Consortium</div>
+    <div class="partners-list">
+      <div class="partner">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18 L12 4 L21 18 Z"/><path d="M7 18 L12 10 L17 18"/></svg>
+        <div><b>Blue Bull Capital</b> <span class="en">藍牛資本</span></div>
+      </div>
+      <div class="partner">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12 L11 15 L16 9"/></svg>
+        <div><b>Ping An One Connect</b> <span class="en">平安壹賬通</span></div>
+      </div>
+      <div class="partner">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20 L4 8 L12 4 L20 8 L20 20"/><path d="M4 12 L20 12"/></svg>
+        <div><b>Chinese Academy of Sciences</b> <span class="en">中國科學院</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="problem">
+  <div class="container">
+    <div class="eyebrow reveal">問題 · The problem</div>
+    <h2 class="reveal">One bureau. <span class="cjk">一個擁有者。</span><br>No plan B.</h2>
+    <p class="lead reveal" style="margin-top: 20px;">
+      Hong Kong’s personal credit infrastructure still runs on 1980s patching logic, owned by a single
+      US-domiciled bureau that structurally cannot route cross-border data. The 2025 HKMA dual-CRA mandate
+      doubled compliance load on every retail bank — and the previous third-seat entrant collapsed
+      under manual burn-rate, leaving a wasting asset on the table.
+    </p>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="ix">01 · SINGLE POINT OF FAILURE</div>
+        <div class="big"><span class="accent">1</span> bureau</div>
+        <p>One bureau serves 5.5M Hong Kong consumers. No redundancy, no competitive benchmark, no public audit.</p>
+        <span class="cn cjk">全港 550 万人共用同一份信用底層。</span>
+      </div>
+      <div class="problem-card reveal">
+        <div class="ix">02 · COMPLIANCE OVERLOAD</div>
+        <div class="big"><span class="accent-cyan">+80%</span> cost</div>
+        <p>The 2025 dual-CRA HKMA directive doubled manual review work. Banks need automation, not another license to display.</p>
+        <span class="cn cjk">2025 金管局雙 CRA 強制指令後、營運成本類軸升。</span>
+      </div>
+      <div class="problem-card reveal">
+        <div class="ix">03 · DEADLOCK AT THE BORDER</div>
+        <div class="big"><span class="accent-gold">0</span> GBA flow</div>
+        <p>US-owned architecture cannot legally move personal credit data across the Greater Bay Area border. A trillion-HKD corridor sits unfunded.</p>
+        <span class="cn cjk">美資架構處理不了跨境數據、错失整個大灣區。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="triangle">
+  <div class="container">
+    <div class="eyebrow reveal">唯一數學解 · The thesis</div>
+    <h2 class="reveal">Capital × AI × Cryptography.<br><span class="cjk" style="color: var(--ink-2); font-weight: 500;">三缺一, 系統不成立。</span></h2>
+    <p class="lead reveal" style="margin-top: 20px;">
+      Capital alone has no credibility moat. Science alone has no commercial path. AI alone has no defense.
+      The only architecture that survives regulator scrutiny <em>and</em> outsells the legacy bureau
+      is the iron triangle — three parties, one network, no single point of capture.
+    </p>
+    <div class="tri-wrap reveal">
+      
+<svg class="tri-svg" viewBox="0 0 800 760" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="tri-side" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F2C94C" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#E63E48" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="tri-side2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E63E48" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#36D6FF" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="tri-side3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#36D6FF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#F2C94C" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <polygon points="400,80 700,640 100,640" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="60" stroke-linejoin="round"/>
+  <polygon points="400,80 700,640 100,640" fill="none" stroke="url(#tri-side)"  stroke-width="2"/>
+  <polygon points="400,80 700,640 100,640" fill="none" stroke="url(#tri-side2)" stroke-width="2"/>
+  <polygon points="400,80 700,640 100,640" fill="none" stroke="url(#tri-side3)" stroke-width="2"/>
+  <circle cx="400" cy="80"  r="14" fill="#F2C94C"/>
+  <circle cx="700" cy="640" r="14" fill="#E63E48"/>
+  <circle cx="100" cy="640" r="14" fill="#36D6FF"/>
+  <text x="400" y="50"  text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#F2C94C" letter-spacing="3">CAPITAL</text>
+  <text x="700" y="680" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#E63E48" letter-spacing="3">COMMERCIAL AI</text>
+  <text x="100" y="680" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#36D6FF" letter-spacing="3">CRYPTOGRAPHY</text>
+  <text x="400" y="400" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="28" font-weight="600" fill="#F2F1EC" letter-spacing="-1">ICLNet²</text>
+  <text x="400" y="425" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="13" fill="#B7C0CF" letter-spacing="2">資本 × 商業 AI × 絕對防禦</text>
+  <text x="400" y="455" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6E7C92" letter-spacing="2">UNQUESTIONABLE SYSTEM-LEVEL MOAT</text>
+</svg>
+
+      <div class="tri-label" style="top: 4%; left: 50%; transform: translateX(-50%); text-align: center;">
+        <div class="num">PILLAR 01</div>
+        <div class="nm">Endurance capital</div>
+        <div class="sub cjk">48–60 個月極限耐力, <br>拒絕被動 LP。</div>
+      </div>
+      <div class="tri-label" style="top: 78%; right: 0%; text-align: right;">
+        <div class="num">PILLAR 02</div>
+        <div class="nm">Commercial AI</div>
+        <div class="sub cjk">FinancialGPT + Gamma Suite, <br>合規審查提速 10×。</div>
+      </div>
+      <div class="tri-label" style="top: 78%; left: 0%; text-align: left;">
+        <div class="num">PILLAR 03</div>
+        <div class="nm">Hardcore cryptography</div>
+        <div class="sub cjk">中科院 MPC + 同態加密, <br>ICLNet² 量子級防禦。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="architecture">
+  <div class="container">
+    <div class="eyebrow reveal">架構 · ICLNet² technical stack</div>
+    <h2 class="reveal">Four layers.<br><span class="cjk" style="color: var(--ink-2); font-weight: 500;">每一層都是監管、學界與市場都無法反驅的硬資產。</span></h2>
+    <p class="lead reveal" style="margin-top: 20px;">點按任一層看詳細。</p>
+    <div class="stack">
+      <div class="layer network reveal" data-layer="net">
+        <div class="lbl">Layer 04 · Network</div>
+        <h3>ICLNet² — distributed, tamper-proof</h3>
+        <p>對接信貸平台 CRP 的底層分布式架構。Consensus-based, audit-forever, no operator override.</p>
+        <ul>
+          <li>5.5M HK consumer records — original, encrypted, distributed</li>
+          <li>GBA cross-border channel — 2026 大灣區標準合同</li>
+          <li>Independent assessment by industry body (Phase 2)</li>
+        </ul>
+        <div class="tap">↑ Click to expand</div>
+      </div>
+      <div class="layer crypto reveal" data-layer="crypto">
+        <div class="lbl">Layer 03 · Cryptography</div>
+        <h3>MPC + Homomorphic Encryption</h3>
+        <p>中國科學院頂尖多方安全計算。Model on encrypted data. No plaintext ever leaves the trust boundary.</p>
+        <ul>
+          <li>Multi-Party Computation across the three engines</li>
+          <li>Homomorphic encryption for high-precision credit modeling</li>
+          <li>ICLNet² 量子級防禦 — post-quantum era</li>
+        </ul>
+        <div class="tap">↑ Click to expand</div>
+      </div>
+      <div class="layer ai reveal" data-layer="ai">
+        <div class="lbl">Layer 02 · AI</div>
+        <h3>FinancialGPT — compliance in the model</h3>
+        <p>〈個人信貸資料實務守則〉(CCD Code) baked into the model — not bolted on. 「守則即代碼」。</p>
+        <ul>
+          <li>Compliance review &amp; data cleansing 10× faster</li>
+          <li>Internal manual intervention → near zero</li>
+          <li>Gamma Suite — new product time-to-market: months → weeks</li>
+        </ul>
+        <div class="tap">↑ Click to expand</div>
+      </div>
+      <div class="layer app reveal" data-layer="app">
+        <div class="lbl">Layer 01 · Application</div>
+        <h3>Two rails, one rail yard</h3>
+        <p>We don't sell raw data. We sell risk predictions and AI compute — the rails the legacy bureau never built.</p>
+        <ul>
+          <li>Retail bank rail — replace manual review entirely</li>
+          <li>Money-lender API portal — on-ramp in days, not months</li>
+          <li>Risk signal marketplace for downstream fintechs</li>
+        </ul>
+        <div class="tap">↑ Click to expand</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="engines">
+  <div class="container">
+    <div class="eyebrow reveal">三引擎 · The engines</div>
+    <h2 class="reveal">One network. Three engines.<br><span class="cjk" style="color: var(--ink-2); font-weight: 500;">每一台引擎都是同類賽道裡的硬貨幣。</span></h2>
+    <div class="engines">
+      <div class="engine capital reveal">
+        <div class="role">Engine I · 資本</div>
+        <h3>Blue Bull Capital</h3>
+        <p class="tagline">軌道推進器 — 極限耐力資本, 計算到第 60 個月的物理極限。</p>
+        <ul class="facts">
+          <li><span class="k">Runway</span><span class="v">48–60 months</span></li>
+          <li><span class="k">Style</span><span class="v">Strategic, not passive</span></li>
+          <li><span class="k">Mandate</span><span class="v">Engineer-physicist operators</span></li>
+          <li><span class="k">Mandate</span><span class="v cjk">絕不重蹔諾華覆蹟</span></li>
+        </ul>
+        <div class="price">CAPITAL · 耐力 = 系統穩定性</div>
+      </div>
+      <div class="engine ai reveal">
+        <div class="role">Engine II · 商業 AI</div>
+        <h3>Ping An One Connect</h3>
+        <p class="tagline">商業燃料引擎 — 全球領先金融科技與 AI 變現場景。</p>
+        <ul class="facts">
+          <li><span class="k">Stack</span><span class="v">FinancialGPT · Gamma Suite</span></li>
+          <li><span class="k">Speed</span><span class="v">Compliance review ×10</span></li>
+          <li><span class="k">Manual</span><span class="v">→ near zero</span></li>
+          <li><span class="k">Coverage</span><span class="v cjk">大灣區內地網絡</span></li>
+        </ul>
+        <div class="price">AI · 速度 = 商業護城河</div>
+      </div>
+      <div class="engine crypto reveal">
+        <div class="role">Engine III · 密碼學</div>
+        <h3>Chinese Academy of Sciences</h3>
+        <p class="tagline">核心防禦堡壕 — 宇宙最頂級的密碼學與硬核隱私計算。</p>
+        <ul class="facts">
+          <li><span class="k">Core</span><span class="v">MPC · Homomorphic Encryption</span></li>
+          <li><span class="k">Posture</span><span class="v">Quantum-grade defense</span></li>
+          <li><span class="k">Compliance</span><span class="v cjk">彻底擊碎 PDPO 枸鎖</span></li>
+          <li><span class="k">Validation</span><span class="v">國家級算法驗證</span></li>
+        </ul>
+        <div class="price">CRYPTO · 信任 = 無法被貢疑</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="calculator">
+  <div class="container">
+    <div class="eyebrow reveal">成本計算器 · Run the -80% math on your bank</div>
+    <h2 class="reveal">轉上一個控制台、<br><span class="cjk" style="color: var(--ink-2); font-weight: 500;">看看「人力地獎」能被生生推平多少。</span></h2>
+    <p class="lead reveal" style="margin-top: 20px;">
+      Drag the sliders for your institution. ICLNet² keeps a single ops FT per bank for compliance oversight;
+      everything else is automated. The 60% bureau-fee compression reflects 2025 dual-CRA market re-pricing.
+    </p>
+    <div class="calc reveal">
+      <div>
+        <h3>Your numbers</h3>
+        <div class="sub">以下為示例計算。拖動控制條查看即時結果。</div>
+        <div class="calc-inputs">
+          <div class="calc-input">
+            <div class="top"><span class="lbl">Monthly credit decisions</span><span class="val" id="volV">20,000</span></div>
+            <input type="range" id="volSlider" min="1000" max="200000" step="1000" value="20000">
+          </div>
+          <div class="calc-input">
+            <div class="top"><span class="lbl">Manual review headcount</span><span class="val" id="hcV">12</span></div>
+            <input type="range" id="hcSlider" min="1" max="80" step="1" value="12">
+          </div>
+          <div class="calc-input">
+            <div class="top"><span class="lbl">Loaded cost per FTE (HKD/mo)</span><span class="val" id="costV">55,000</span></div>
+            <input type="range" id="costSlider" min="20000" max="120000" step="1000" value="55000">
+          </div>
+          <div class="calc-input">
+            <div class="top"><span class="lbl">Legacy bureau fee per pull (HKD)</span><span class="val" id="feeV">85</span></div>
+            <input type="range" id="feeSlider" min="10" max="200" step="5" value="85">
+          </div>
+        </div>
+      </div>
+      <div class="calc-output">
+        <div class="big-save"><span id="saveAmt">15.6M</span><span class="suffix">HKD / yr saved</span></div>
+        <div class="pct" id="savePct">~ 78% reduction</div>
+        <div class="bar-wrap">
+          <span class="lbl">Today</span>
+          <div class="bar"><div id="barBefore" style="width: 100%; background: var(--red);"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <span class="lbl">ICLNet²</span>
+          <div class="bar"><div id="barAfter" style="width: 22%; background: var(--green);"></div></div>
+        </div>
+        <div class="row"><span class="k">Monthly cost today</span><span class="v red" id="costBefore">2.36M</span></div>
+        <div class="row"><span class="k">Monthly cost w/ ICLNet²</span><span class="v" id="costAfter">520K</span></div>
+        <div class="row"><span class="k">Payback (est. 8M HKD integration)</span><span class="v green" id="paybackV">6.2 mo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="business">
+  <div class="container">
+    <div class="eyebrow reveal">雙軌分流 · Business model</div>
+    <h2 class="reveal">We don't sell data.<br><span class="cjk" style="color: var(--ink-2); font-weight: 500;">我們販賣風險預測與 AI 算力。</span></h2>
+    <p class="lead reveal" style="margin-top: 20px;">
+      Legacy bureaus charge a “data ground rent” — every credit pull is a toll booth.
+      ICLNet² replaces the toll with a risk API and an automation rail. Two channels, two distinct ACVs,
+      one shared infrastructure.
+    </p>
+    <div class="dual">
+      <div class="track t1 reveal">
+        <span class="tag">Type I · B2B Banks</span>
+        <h3>Retail bank rail</h3>
+        <p class="audience">Retail banks struggling with the 2025 dual-CRA HKMA directive.</p>
+        <div class="row"><span class="k">Action</span><span class="v">Provide AI automation replacement for manual review.</span></div>
+        <div class="row"><span class="k">Impact</span><span class="v">Direct take of the existing optimization market; solves the dual-CRA labor hell.</span></div>
+        <div class="row"><span class="k">Pricing</span><span class="v">Per-decision + platform subscription</span></div>
+        <div class="row"><span class="k">Channel</span><span class="v cjk">平安渠道 + 直銷</span></div>
+      </div>
+      <div class="track t2 reveal">
+        <span class="tag">Type II · B2B2C Lenders</span>
+        <h3>Licensed money-lender API portal</h3>
+        <p class="audience">Mid-tier licensed money lenders who need bureau-grade risk signal without bureau-grade cost.</p>
+        <div class="row"><span class="k">Action</span><span class="v">Open universal API portal — on-ramp in days.</span></div>
+        <div class="row"><span class="k">Impact</span><span class="v">Captures the vacuum left by the collapsed third-seat player.</span></div>
+        <div class="row"><span class="k">Pricing</span><span class="v">Usage-based, tiered monthly</span></div>
+        <div class="row"><span class="k">Channel</span><span class="v cjk">開放通用門戶 + 合作夥伴</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="flow">
+  <div class="container">
+    <div class="eyebrow reveal">大灣區跨境 · GBA cross-border flow</div>
+    <h2 class="reveal">A trillion-HKD corridor<br><span class="cjk" style="color: var(--ink-2); font-weight: 500;">不是被一張許可警鬧住的。</span></h2>
+    <p class="lead reveal" style="margin-top: 20px;">
+      The 2026 GBA Standard Contract opens cross-border personal data flow. The legacy US-owned bureau
+      legally cannot participate. ICLNet² routes around the deadlock via MPC — click through the five gates.
+    </p>
+    <div class="flow reveal">
+      <div>
+        <h3>The encrypted handoff</h3>
+        <div class="sub">點任一個關門、看看完整某一個階段被處理的說明。</div>
+
+<svg class="flow-svg" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="gba" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#36D6FF" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#F2C94C" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E63E48" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <!-- Region blocks -->
+  <rect x="20" y="60" width="160" height="280" rx="10" fill="rgba(54,214,255,0.05)" stroke="rgba(54,214,255,0.3)" stroke-width="1"/>
+  <rect x="380" y="60" width="160" height="280" rx="10" fill="rgba(230,62,72,0.05)" stroke="rgba(230,62,72,0.3)" stroke-width="1"/>
+  <!-- Border gate -->
+  <line x1="280" y1="40" x2="280" y2="360" stroke="rgba(242,201,76,0.3)" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="280" y="28" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#F2C94C" letter-spacing="2">GBA STANDARD CONTRACT GATE</text>
+  <!-- Path -->
+  <path id="flowPath" d="M 100 200 Q 200 100 280 200 Q 360 300 460 200" fill="none" stroke="url(#gba)" stroke-width="2" stroke-dasharray="4 4"/>
+  <!-- HK node -->
+  <circle cx="100" cy="200" r="22" fill="#0A0F1C" stroke="#36D6FF" stroke-width="2"/>
+  <text x="100" y="205" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="600" fill="#F2F1EC">HK</text>
+  <text x="100" y="240" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6E7C92" letter-spacing="1">HONG KONG</text>
+  <!-- GBA node -->
+  <circle cx="460" cy="200" r="22" fill="#0A0F1C" stroke="#E63E48" stroke-width="2"/>
+  <text x="460" y="205" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="600" fill="#F2F1EC">GBA</text>
+  <text x="460" y="240" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6E7C92" letter-spacing="1">MAINLAND</text>
+  <!-- Packet -->
+  <circle id="flowPacket" cx="100" cy="200" r="6" fill="#F2C94C" opacity="0"/>
+  <!-- Labels along path -->
+  <text x="190" y="135" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#36D6FF" letter-spacing="1">ENCRYPT</text>
+  <text x="370" y="135" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#F2C94C" letter-spacing="1">MATCH</text>
+  <text x="280" y="370" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#E63E48" letter-spacing="2">MPC HANDSHAKE</text>
+</svg>
+
+      </div>
+      <div class="flow-steps" id="flowSteps">
+        <button class="flow-step" data-flow="1" id="flowStep1">
+          <span class="num">1</span>
+          <div>
+            <b>HK-side compliance gate</b>
+            <span>Blue Bull: PDPO lawful purpose, data minimization, retention policy check.</span>
+            <div class="ix">Blue Bull Capital · 港方合規</div>
+          </div>
+        </button>
+        <button class="flow-step" data-flow="2" id="flowStep2">
+          <span class="num">2</span>
+          <div>
+            <b>Encryption under Standard Contract</b>
+            <span>2026 GBA Standard Contract applied. Fields tokenized; PII never crosses the border in cleartext.</span>
+            <div class="ix">ICLNet² · 跨境隱私計算</div>
+          </div>
+        </button>
+        <button class="flow-step" data-flow="3" id="flowStep3">
+          <span class="num">3</span>
+          <div>
+            <b>MPC handshake at the border</b>
+            <span>中科院多方安全計算。算法交互、明文隱藏、無存儲位偏移。</span>
+            <div class="ix">CAS · 量子級交互</div>
+          </div>
+        </button>
+        <button class="flow-step" data-flow="4" id="flowStep4">
+          <span class="num">4</span>
+          <div>
+            <b>Mainland-side risk signal join</b>
+            <span>Ping An 平安 提供內地資訊網絡. 信識組合、不浮現個人資料。</span>
+            <div class="ix">Ping An One Connect · 內地跨境資訊</div>
+          </div>
+        </button>
+        <button class="flow-step" data-flow="5" id="flowStep5">
+          <span class="num">5</span>
+          <div>
+            <b>Decision returns encrypted</b>
+            <span>Risk score returned to HK-side under audit trail. Full round-trip logged for IA review.</span>
+            <div class="ix">ICLNet² · 審計跨境跟蹤</div>
+          </div>
+        </button>
+        <button class="btn" id="flowRun">▶ Auto-play the flow</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="roadmap">
+  <div class="container">
+    <div class="eyebrow reveal">路線· Roadmap</div>
+    <h2 class="reveal">Four phases.<br><span class="cjk" style="color: var(--ink-2); font-weight: 500;">無廢話、不畫饵。</span></h2>
+    <div class="road-head reveal">
+      <div class="muted">點任一個階段、看詳實際交付物。</div>
+      <button class="btn" id="roadPlay">▶ Play timeline</button>
+    </div>
+    <div class="road">
+      <div class="road-line" aria-hidden="true"></div>
+      <div class="road-grid">
+        <div class="stage active reveal" data-stage="1">
+          <div class="dot" aria-hidden="true"></div>
+          <div class="q">2026 · Q3</div>
+          <h3>Phase 01 — Alliance</h3>
+          <p class="more">設置專案主體、平安技術協議落定、中科院簽署聯合實驗室意向書。<br><em class="muted">Entity formation · Ping An MOU · CAS joint-lab LOI</em></p>
+          <div class="toggle">▸ Expand</div>
+        </div>
+        <div class="stage reveal" data-stage="2">
+          <div class="dot" aria-hidden="true"></div>
+          <div class="q">2026 · Q4</div>
+          <h3>Phase 02 — Independent Assessment</h3>
+          <p class="more">第三方行業公會審查中科院安全架構、提交正式意向書。<br><em class="muted">IA by industry body · Formal opinion filed</em></p>
+          <div class="toggle">▸ Expand</div>
+        </div>
+        <div class="stage reveal" data-stage="3">
+          <div class="dot" aria-hidden="true"></div>
+          <div class="q">2027 · Q1</div>
+          <h3>Phase 03 — Network Ignition</h3>
+          <p class="more">接入 CRP 平台 ICLNet² 安全網絡、啟動硬核隱私計算壓力測試。<br><em class="muted">CRP integration · Hardcore privacy stress-test</em></p>
+          <div class="toggle">▸ Expand</div>
+        </div>
+        <div class="stage reveal" data-stage="4">
+          <div class="dot" aria-hidden="true"></div>
+          <div class="q">2027 · Q2+</div>
+          <h3>Phase 04 — Commercial Launch</h3>
+          <p class="more">正式開機營運。協助首批種子銀行升級系統、用極致成本淘汰老舊供應商。<br><em class="muted">Commercial go-live · Seed-bank migration</em></p>
+          <div class="toggle">▸ Expand</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section tight" id="numbers">
+  <div class="container">
+    <div class="eyebrow reveal">指標 · The numbers</div>
+    <h2 class="reveal">Four numbers an LP will actually ask about.</h2>
+    <div class="stats">
+      <div class="stat reveal">
+        <div class="v red">5.5M</div>
+        <div class="k">Hong Kong consumers under the existing single bureau<span class="en">TARGET POPULATION</span></div>
+      </div>
+      <div class="stat reveal">
+        <div class="v cyan">10×</div>
+        <div class="k">Compliance review &amp; data cleansing speed<span class="en">FINANCIALGPT</span></div>
+      </div>
+      <div class="stat reveal">
+        <div class="v gold">-80%</div>
+        <div class="k">Operational cost for retail bank customers<span class="en">VS. LEGACY BUREAU</span></div>
+      </div>
+      <div class="stat reveal">
+        <div class="v green">48-60</div>
+        <div class="k">Months of endurance capital runway<span class="en">BLUE BULL</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="ask">
+  <div class="container">
+    <div class="ask reveal">
+      <div class="eyebrow">戰術決斷 · The ask</div>
+      <h2>Strategic capital, <span style="color: var(--gold);">not passive capital.</span><br><span class="cjk" style="color: var(--ink-2); font-weight: 500; font-size: 0.6em;">「如果一件事在規律上是可能的、且在商業上是極度高效的、那就動手做、別留中愈。」</span></h2>
+      <p class="lead">
+        We're opening a strategic round to finalize the joint-lab structure, secure Phase-2 independent assessment,
+        and ignite the CRP integration. The only regret is waiting.
+      </p>
+      <div class="ask-actions">
+        <a class="btn btn-primary" href="mailto:strategy@bluebullvc.com?subject=ICLNet%C2%B2%20Investor%20Brief%20Request">Request the data room <span class="arr">→</span></a>
+        <a class="btn" href="mailto:strategy@bluebullvc.com?subject=ICLNet%C2%B2%20Investor%20Briefing">Schedule a 30-min briefing</a>
+      </div>
+      <div class="ask-meta">
+        <div class="item"><div class="k">Contact</div><div class="v">strategy@bluebullvc.com</div></div>
+        <div class="item"><div class="k">HQ</div><div class="v">Hong Kong SAR</div></div>
+        <div class="item"><div class="k">Operating</div><div class="v">HK ↔ GBA Mainland</div></div>
+        <div class="item"><div class="k">Classification</div><div class="v">Confidential — investor distribution only</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="foot-grid foot">
+      <div>
+        <h5>ICLNet²</h5>
+        <p>Hong Kong’s third credit seat — built on quantum-grade privacy computing, AI-native compliance, and a GBA cross-border channel the legacy US-owned bureau structurally cannot deliver.</p>
+      </div>
+      <div>
+        <h5>Document</h5>
+        <ul>
+          <li><a href="#demo">FinancialGPT demo</a></li>
+          <li><a href="#problem">The problem</a></li>
+          <li><a href="#architecture">Architecture</a></li>
+          <li><a href="#engines">The three engines</a></li>
+          <li><a href="#business">Business model</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Consortium</h5>
+        <ul>
+          <li>Blue Bull Capital · 藍牛資本</li>
+          <li>Ping An One Connect · 平安壹賬通</li>
+          <li>Chinese Academy of Sciences · 中國科學院</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:strategy@bluebullvc.com">strategy@bluebullvc.com</a></li>
+          <li>Hong Kong SAR</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 ICLNet². For accredited investor distribution only.</div>
+      <div>Built from the H2 2026 investor deck · 2026-06-12</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reveal-on-scroll
+const io = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }
+}, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+// Nav shadow on scroll
+const nav = document.querySelector('.nav');
+const onScroll = () => {
+  if (window.scrollY > 8) nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.4)';
+  else nav.style.boxShadow = 'none';
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// ============================================================
+// FinancialGPT demo
+// ============================================================
+const SCENARIOS = [{"id": "s1", "title": "Retail personal loan", "input": "Applicant: 34, HKID-holder, salaried at MTRC for 7 years. Requesting HKD 250,000 unsecured personal loan, 36-month term. Existing 2 credit cards, 1 auto-loan at 38% util.", "decision": "approve", "score": 728, "amount": "HKD 250,000", "rate": "5.8% p.a.", "manual": "No — automated"}, {"id": "s2", "title": "SME working capital", "input": "Applicant: F&B operator, 2 outlets in Kowloon, 6 years operating. Requesting HKD 1.2M working-capital line, 12-month revolving. Recent 2 short-payment incidents flagged.", "decision": "review", "score": 612, "amount": "HKD 1,200,000", "rate": "Conditional", "manual": "Yes — ops review (1 hr)"}, {"id": "s3", "title": "Cross-border GBA", "input": "Applicant: Shenzhen-resident, GBA Standard Contract signed 2026 Q2. Requesting HKD 800,000 credit line for HK property co-signer. No HK bureau data; relying on GBA-equivalent signal via MPC.", "decision": "approve", "score": 691, "amount": "HKD 800,000", "rate": "6.4% p.a.", "manual": "No — cross-border auto-routed"}, {"id": "s4", "title": "Thin-file applicant", "input": "Applicant: 23, recent HKPR, 14 months credit history, 1 card, no delinquencies. Requesting HKD 60,000 unsecured. Score cannot be derived from bureau alone.", "decision": "decline", "score": 489, "amount": "HKD 60,000", "rate": "Declined", "manual": "Yes — declined w/ alternative-data referral"}];
+const scenarioButtons = document.querySelectorAll('.scenario-btn');
+const demoInput = document.getElementById('demoInput');
+const demoRun = document.getElementById('demoRun');
+const steps = document.querySelectorAll('#demoOutput .demo-step');
+const decision = document.getElementById('demoDecision');
+const stepMetas = [
+  'PII fields stripped — 7 of 18 outside lawful purpose',
+  'Bureau signal aggregated — 5.5M records, 12ms',
+  'Model inference complete — audit trail logged',
+  'GBA channel engaged — MPC handshake OK',
+];
+const stepLabels = [
+  ['Parse · CCD Code compliance gate', 'strip PII fields outside the lawful purpose'],
+  ['Query · encrypted bureau signal', 'MPC-aggregated across 5.5M consumer records'],
+  ['Score · FinancialGPT inference', 'CCD-compliant model, full audit trail'],
+  ['Route · GBA cross-border channel', 'if applicable, encrypted under 2026 Standard Contract'],
+];
+
+let currentScenario = 0;
+scenarioButtons.forEach((b, i) => {
+  b.addEventListener('click', () => {
+    scenarioButtons.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    currentScenario = i;
+    demoInput.value = SCENARIOS[i].input;
+  });
+});
+
+function resetDemo() {
+  steps.forEach(s => { s.classList.remove('done', 'running'); s.querySelector('[data-meta]').textContent = '· awaiting input'; });
+  decision.classList.remove('show', 'approve', 'review', 'decline');
+  document.getElementById('decisionV').textContent = '—';
+  document.getElementById('decisionText').textContent = '—';
+  document.getElementById('decisionScore').textContent = '—';
+  document.getElementById('decisionAmount').textContent = '—';
+  document.getElementById('decisionRate').textContent = '—';
+  document.getElementById('decisionManual').textContent = '—';
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function runDemo() {
+  if (demoRun.disabled) return;
+  demoRun.disabled = true;
+  resetDemo();
+  const s = SCENARIOS[currentScenario];
+
+  for (let i = 0; i < steps.length; i++) {
+    const step = steps[i];
+    step.classList.add('running');
+    step.querySelector('[data-meta]').textContent = '· processing…';
+    await sleep(620);
+    step.classList.remove('running');
+    step.classList.add('done');
+    step.querySelector('[data-meta]').textContent = stepMetas[i];
+  }
+
+  // Show decision
+  decision.classList.add('show', s.decision);
+  document.getElementById('decisionV').textContent =
+    s.decision === 'approve' ? 'APPROVE' :
+    s.decision === 'review' ? 'MANUAL REVIEW' : 'DECLINE';
+  document.getElementById('decisionText').textContent =
+    s.decision === 'approve' ? 'Auto-approved under CCD-compliant rules' :
+    s.decision === 'review' ? 'Routed to ops desk (est. < 1 hour)' :
+    'Declined — referred to alternative-data pool';
+  document.getElementById('decisionScore').textContent = s.score + ' / 850';
+  document.getElementById('decisionAmount').textContent = s.amount;
+  document.getElementById('decisionRate').textContent = s.rate;
+  document.getElementById('decisionManual').textContent = s.manual;
+
+  demoRun.disabled = false;
+}
+demoRun.addEventListener('click', runDemo);
+
+// ============================================================
+// Cost calculator
+// ============================================================
+const volSlider = document.getElementById('volSlider');
+const hcSlider  = document.getElementById('hcSlider');
+const costSlider= document.getElementById('costSlider');
+const feeSlider = document.getElementById('feeSlider');
+const volV = document.getElementById('volV');
+const hcV  = document.getElementById('hcV');
+const costV= document.getElementById('costV');
+const feeV = document.getElementById('feeV');
+const saveAmt = document.getElementById('saveAmt');
+const savePct = document.getElementById('savePct');
+const costBefore = document.getElementById('costBefore');
+const costAfter  = document.getElementById('costAfter');
+const annualV = document.getElementById('annualV');
+const barBefore = document.getElementById('barBefore');
+const barAfter  = document.getElementById('barAfter');
+const paybackV = document.getElementById('paybackV');
+
+function fmt(n) {
+  if (n >= 1_000_000) return (n/1_000_000).toFixed(2) + 'M';
+  if (n >= 1_000)     return (n/1_000).toFixed(0) + 'K';
+  return Math.round(n).toLocaleString();
+}
+
+function recalc() {
+  const vol  = +volSlider.value;
+  const hc   = +hcSlider.value;
+  const cost = +costSlider.value;
+  const fee  = +feeSlider.value;
+  volV.textContent = vol.toLocaleString();
+  hcV.textContent  = hc;
+  costV.textContent = cost.toLocaleString();
+  feeV.textContent  = fee;
+  const before = hc * cost + vol * fee;
+  const after = Math.max(0, (hc * 0.15) * cost + vol * fee * 0.4);
+  const save = before - after;
+  const pct = before > 0 ? (save / before) : 0;
+  saveAmt.textContent = fmt(Math.max(0, save * 12));
+  savePct.textContent = '~ ' + Math.round(pct * 100) + '% reduction';
+  costBefore.textContent = fmt(before);
+  costAfter.textContent = fmt(after);
+  if (annualV) annualV.textContent = fmt(Math.max(0, save * 12));
+  const max = Math.max(before, 1);
+  barBefore.style.width = '100%';
+  barAfter.style.width = Math.max(2, (after / max) * 100) + '%';
+  const integration = 8_000_000;
+  const months = save > 0 ? (integration / save) : Infinity;
+  paybackV.textContent = isFinite(months) ? (months < 1 ? '<1 mo' : months.toFixed(1) + ' mo') : '—';
+}
+[volSlider, hcSlider, costSlider, feeSlider].forEach(s => s.addEventListener('input', recalc));
+recalc();
+
+// ============================================================
+// GBA cross-border flow
+// ============================================================
+const flowPacket = document.getElementById('flowPacket');
+const flowPath = document.getElementById('flowPath');
+const flowRun = document.getElementById('flowRun');
+
+function hideAllSteps() {
+  for (let i = 1; i <= 5; i++) {
+    const el = document.getElementById('flowStep' + i);
+    if (el) el.classList.remove('in');
+  }
+}
+function showStep(n) {
+  hideAllSteps();
+  const el = document.getElementById('flowStep' + n);
+  if (el) el.classList.add('in');
+}
+function movePacket(p) {
+  const len = flowPath.getTotalLength();
+  const pt = flowPath.getPointAtLength(p * len);
+  flowPacket.setAttribute('cx', pt.x);
+  flowPacket.setAttribute('cy', pt.y);
+  flowPacket.setAttribute('opacity', '1');
+}
+async function runFlow() {
+  if (flowRun.disabled) return;
+  flowRun.disabled = true;
+  hideAllSteps();
+  const stages = [
+    { dur: 600, step: 1, end: 0.18 },
+    { dur: 700, step: 2, end: 0.36 },
+    { dur: 800, step: 3, end: 0.55 },
+    { dur: 700, step: 4, end: 0.78 },
+    { dur: 700, step: 5, end: 1.0 },
+  ];
+  let p = 0;
+  flowPacket.setAttribute('opacity', '1');
+  for (const s of stages) {
+    showStep(s.step);
+    const t0 = performance.now();
+    while (performance.now() - t0 < s.dur) {
+      const local = (performance.now() - t0) / s.dur;
+      movePacket(p + (s.end - p) * local);
+      await sleep(16);
+    }
+    p = s.end;
+  }
+  await sleep(400);
+  flowRun.disabled = false;
+}
+flowRun.addEventListener('click', runFlow);
+document.querySelectorAll('[data-flow]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const n = parseInt(btn.dataset.flow);
+    showStep(n);
+    const map = { 1: 0.15, 2: 0.32, 3: 0.55, 4: 0.78, 5: 1.0 };
+    if (map[n] !== undefined) {
+      flowPacket.setAttribute('opacity', '1');
+      movePacket(map[n]);
+    }
+  });
+});
+flowPacket.setAttribute('opacity', '0');
+
+// ============================================================
+// Architecture layer click
+// ============================================================
+const layers = document.querySelectorAll('.layer');
+layers.forEach(l => {
+  l.addEventListener('click', () => {
+    layers.forEach(x => x.classList.remove('active'));
+    l.classList.add('active');
+  });
+});
+
+// ============================================================
+// Interactive roadmap
+// ============================================================
+const stages = document.querySelectorAll('.stage');
+stages.forEach(stage => {
+  stage.addEventListener('click', () => {
+    const wasOpen = stage.classList.contains('open');
+    stages.forEach(s => s.classList.remove('open'));
+    if (!wasOpen) {
+      stage.classList.add('open');
+      const tog = stage.querySelector('.toggle');
+      if (tog) tog.textContent = '▾ Collapse';
+    }
+  });
+  stage.setAttribute('tabindex', '0');
+  stage.setAttribute('role', 'button');
+  stage.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); stage.click(); }
+  });
+  if (stage.classList.contains('active')) stage.classList.add('open');
+});
+let playing = false;
+async function playTimeline() {
+  if (playing) return;
+  playing = true;
+  stages.forEach(s => s.classList.remove('open'));
+  for (let i = 0; i < stages.length; i++) {
+    const stage = stages[i];
+    stage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    stage.classList.add('open');
+    const tog = stage.querySelector('.toggle');
+    if (tog) tog.textContent = '▾ Collapse';
+    await sleep(1700);
+  }
+  playing = false;
+}
+const roadPlay = document.getElementById('roadPlay');
+if (roadPlay) roadPlay.addEventListener('click', playTimeline);
+</script>
+</body>
+</html>
