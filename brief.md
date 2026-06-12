@@ -1,9 +1,9 @@
-# ICLNet² Investor MVP — Handoff
+# BlueBull Investor MVP — Handoff
 
 ## Live URLs
 
-- **Live site:** https://files-mentioned-by-the-user-pdf-2.vercel.app
-- **GitHub:** https://github.com/utopia2283/iclnet2-investor-mvp
+- **Live site:** https://bluebull-investor-mvp.vercel.app
+- **GitHub:** https://github.com/utopia2283/bluebull-investor-mvp
 - **Vercel project:** https://vercel.com/match2289s-projects/files-mentioned-by-the-user-pdf-2
 
 Future `git push` to `main` will auto-deploy via Vercel.

@@ -1,7 +1,7 @@
-# ICLNet² — Investor MVP
+# BlueBull — Investor MVP
 
 A bilingual (Traditional Chinese + English) single-page investor site for
-[ICLNet²](https://iclnet2.example), a consortium of Blue Bull Capital, Ping An One
+[BlueBull](https://bluebull.example), a consortium of Blue Bull Capital, Ping An One
 Connect, and the Chinese Academy of Sciences building Hong Kong's third credit
 bureau seat on privacy-computing + AI + GBA cross-border rails.
 
@@ -21,7 +21,7 @@ or deploy to any static host (Vercel, Netlify, Cloudflare Pages, S3+CloudFront).
 vercel --prod
 
 # Or any static host
-rsync -avz --delete ./ user@host:/srv/iclnet2/
+rsync -avz --delete ./ user@host:/srv/bluebull/
 ```
 
 ## Sections
