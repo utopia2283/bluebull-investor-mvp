@@ -2,7 +2,7 @@
 
 ## Live URLs
 
-- **Live site:** https://bluebull-investor-mvp.vercel.app
+- **Live site:** https://files-mentioned-by-the-user-pdf-2.vercel.app
 - **GitHub:** https://github.com/utopia2283/bluebull-investor-mvp
 - **Vercel project:** https://vercel.com/match2289s-projects/files-mentioned-by-the-user-pdf-2
 

@@ -1,7 +1,7 @@
 # BlueBull — Investor MVP
 
 A bilingual (Traditional Chinese + English) single-page investor site for
-[BlueBull](https://bluebull.example), a consortium of Blue Bull Capital, Ping An One
+[BlueBull](https://files-mentioned-by-the-user-pdf-2.vercel.app), a consortium of Blue Bull Capital, Ping An One
 Connect, and the Chinese Academy of Sciences building Hong Kong's third credit
 bureau seat on privacy-computing + AI + GBA cross-border rails.
 
