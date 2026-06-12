@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/t2cn.js"></script>
 
 <style>
 :root {
@@ -615,7 +616,11 @@ footer { border-top: 1px solid var(--line); padding: 48px 0 32px; margin-top: 60
       <a href="#calculator">成本 / Calc</a>
       <a href="#flow">GBA / 跨境</a>
       <a href="#roadmap">路線 / Roadmap</a>
-      <a href="#ask" class="btn">Investor Brief →</a>
+      <a href="#ask" class="btn"><div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="tw" aria-pressed="true">繁</button>
+        <button class="lang-btn" data-lang="cn" aria-pressed="false">简</button>
+      </div>
+      Investor Brief →</a>
     </div>
   </div>
 </nav>
@@ -1859,9 +1864,42 @@ function showTab(name) {
   document.getElementById('rptBody').innerHTML = html;
   const pageNums = { summary: 1, personal: 2, score: 3, accounts: 4, inquiries: 5 };
   document.getElementById('rptPage').textContent = pageNums[name];
+  // If user is in 简 mode, convert the freshly-rendered text in place.
+  if (currentLang === 'cn' && tradToSimp) {
+    const rptBody = document.getElementById('rptBody');
+    const walker = document.createTreeWalker(rptBody, NodeFilter.SHOW_TEXT, {
+      acceptNode(n) {
+        const p = n.parentElement;
+        if (!p) return NodeFilter.FILTER_REJECT;
+        const tag = p.tagName;
+        if (tag === 'SCRIPT' || tag === 'STYLE') return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    let n;
+    while ((n = walker.nextNode())) {
+      n.nodeValue = tradToSimp(n.nodeValue);
+    }
+  }
 }
 
-document.getElementById('sampleRegen').addEventListener('click', loadSample);
+// Track current language so newly-rendered DOM can be re-converted.
+let currentLang = 'tw';
+
+document.getElementById('sampleRegen').addEventListener('click', () => {
+  loadSample().then(() => {
+    // After the report is rendered, re-apply the current language so its
+    // newly-inserted Chinese text gets converted.
+    const current = document.querySelector('.lang-btn.active')?.dataset.lang || 'tw';
+    if (current === 'cn' && tradToSimp) {
+      const rptBody = document.getElementById('rptBody');
+      if (rptBody) {
+        snapshotRoot(rptBody);
+        applyToRoot(rptBody, tradToSimp);
+      }
+    }
+  });
+});
 document.querySelectorAll('.rpt-tab').forEach(t => {
   t.addEventListener('click', () => showTab(t.dataset.tab));
 });
@@ -1870,6 +1908,200 @@ document.getElementById('samplePdf').addEventListener('click', () => {
 });
 
 // Eagerly fetch a sample on page load
+
+// ============================================================
+// Language switcher: 繁 / 简
+// ============================================================
+// Original (繁體) text is preserved in data-trad on each .cjk node
+// so we can toggle back without a reverse-converter dictionary.
+
+let openccReady = null;
+let tradToSimp = null;
+
+function getTradToSimp() {
+  if (tradToSimp) return Promise.resolve(tradToSimp);
+  if (!openccReady) {
+    openccReady = new Promise((resolve, reject) => {
+      // opencc-js loaded via <script> in head; check for global
+      const tryInit = () => {
+        if (typeof OpenCC !== 'undefined' && OpenCC.Converter) {
+          tradToSimp = OpenCC.Converter({ from: 'tw', to: 'cn' });
+          resolve(tradToSimp);
+        } else {
+          setTimeout(tryInit, 50);
+        }
+      };
+      tryInit();
+      setTimeout(() => reject(new Error('opencc-js not loaded')), 8000);
+    });
+  }
+  return openccReady;
+}
+
+function snapshotTrad(root) {
+  // Capture the current Traditional text of every .cjk node once.
+  // We use a TreeWalker so we hit text nodes directly, but keep
+  // the snapshot on the parent element for easy restoration.
+  if (root.dataset.tradReady === '1') return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(n) {
+      const p = n.parentElement;
+      if (!p) return NodeFilter.FILTER_REJECT;
+      // Skip script/style
+      const tag = p.tagName;
+      if (tag === 'SCRIPT' || tag === 'STYLE') return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const originals = [];
+  let n;
+  while ((n = walker.nextNode())) {
+    originals.push(n.nodeValue);
+  }
+  root.dataset.trad = originals.join('');
+  root.dataset.tradReady = '1';
+}
+
+function restoreTrad(root) {
+  if (root.dataset.tradReady !== '1') return;
+  const parts = root.dataset.trad.split('');
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(n) {
+      const p = n.parentElement;
+      if (!p) return NodeFilter.FILTER_REJECT;
+      const tag = p.tagName;
+      if (tag === 'SCRIPT' || tag === 'STYLE') return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  let i = 0;
+  let n;
+  while ((n = walker.nextNode()) && i < parts.length) {
+    n.nodeValue = parts[i++];
+  }
+}
+
+function applySimp(root, converter) {
+  if (root.dataset.tradReady !== '1') return;
+  const parts = root.dataset.trad.split('');
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(n) {
+      const p = n.parentElement;
+      if (!p) return NodeFilter.FILTER_REJECT;
+      const tag = p.tagName;
+      if (tag === 'SCRIPT' || tag === 'STYLE') return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  let i = 0;
+  let n;
+  while ((n = walker.nextNode()) && i < parts.length) {
+    n.nodeValue = converter(parts[i++]);
+  }
+}
+
+function snapshotRoot(root) {
+  if (root.dataset.tradReady === '1') return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(n) {
+      const p = n.parentElement;
+      if (!p) return NodeFilter.FILTER_REJECT;
+      const tag = p.tagName;
+      if (tag === 'SCRIPT' || tag === 'STYLE') return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const parts = [];
+  let n;
+  while ((n = walker.nextNode())) parts.push(n.nodeValue);
+  root.dataset.trad = parts.join('');
+  root.dataset.tradReady = '1';
+}
+
+function applyToRoot(root, transform) {
+  if (root.dataset.tradReady !== '1') return;
+  const parts = root.dataset.trad.split('');
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(n) {
+      const p = n.parentElement;
+      if (!p) return NodeFilter.FILTER_REJECT;
+      const tag = p.tagName;
+      if (tag === 'SCRIPT' || tag === 'STYLE') return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  let i = 0;
+  let n;
+  while ((n = walker.nextNode()) && i < parts.length) {
+    n.nodeValue = transform(parts[i++]);
+  }
+}
+
+// Walk the whole body once and snapshot everything.
+const LANG_ROOTS = (() => {
+  const list = [document.body];
+  return list;
+})();
+
+function snapshotAll() {
+  LANG_ROOTS.forEach(snapshotRoot);
+}
+
+function restoreAll() {
+  LANG_ROOTS.forEach(r => applyToRoot(r, (s) => s));
+}
+
+function convertAll(converter) {
+  LANG_ROOTS.forEach(r => applyToRoot(r, converter));
+}
+
+async function setLang(lang) {
+  // lang: 'tw' (繁) or 'cn' (简)
+  snapshotAll();
+  if (lang === 'cn') {
+    try {
+      const c = await getTradToSimp();
+      convertAll(c);
+    } catch (e) {
+      console.error('opencc-js load failed:', e);
+      return;
+    }
+  } else {
+    restoreAll();
+  }
+
+  currentLang = lang;
+
+  // If the sample report is currently rendered, re-render the active tab
+  // so its text matches the new language. showTab handles the conversion
+  // of the freshly-rendered DOM automatically.
+  if (typeof currentReport !== 'undefined' && currentReport) {
+    showTab(currentTab);
+  }
+
+  // Update UI
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    const active = b.dataset.lang === lang;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+
+  try { localStorage.setItem('bluebull-lang', lang); } catch (e) {}
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+// Restore preference on load
+try {
+  const saved = localStorage.getItem('bluebull-lang');
+  if (saved && saved !== 'tw') {
+    // Wait for the opencc-js script to be ready, then apply
+    window.addEventListener('load', () => setLang(saved));
+  }
+} catch (e) {}
+
 if (document.getElementById('sampleFrame')) {
   // Small delay so the reveal animation has a chance to fire first
   setTimeout(loadSample, 600);

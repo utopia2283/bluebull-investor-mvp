@@ -78,3 +78,15 @@ Click "Generate another" to produce a new random report. None of the names,
 HKIDs, phones, addresses, or account numbers belong to a real person — they
 are produced by the same client-side generator the production bureau uses
 to render demo reports.
+
+## Update 2026-06-12 — 繁/简 language switcher
+
+A `[繁] [简]` toggle is now in the nav, just before the Investor Brief button.
+Default is 繁 (Traditional). Click 简 to switch the entire page — including
+the live sample report's tabs — to Simplified Chinese. Click 繁 to switch back.
+The preference persists in localStorage.
+
+Implementation: opencc-js (tw→cn only, 70KB) loaded from jsDelivr. The original
+Traditional text is captured on first load so we can restore on toggle-back
+without a reverse-conversion dictionary. The sample-report renderer re-applies
+the current language to its dynamically-generated content on every tab switch.
