@@ -68,3 +68,13 @@ The message included a link to `audio-visualization.md` from a Remotion skill �
 like a stray reference from another thread. I didn't act on it; if you wanted audio
 visualization on the site (e.g. a sound design for the demo reveal), say the word and
 I'll add a minimal one with the Web Audio API.
+
+## Update 2026-06-12 — Sample report generator
+
+A new "Sample" section was added between the FinancialGPT demo and the problem
+section. It generates fully synthetic credit reports on demand, mimicking the
+TU HK report format (Summary / Personal / Score / Accounts / Inquiries tabs).
+Click "Generate another" to produce a new random report. None of the names,
+HKIDs, phones, addresses, or account numbers belong to a real person — they
+are produced by the same client-side generator the production bureau uses
+to render demo reports.

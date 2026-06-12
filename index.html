@@ -492,6 +492,111 @@ footer { border-top: 1px solid var(--line); padding: 48px 0 32px; margin-top: 60
 .reveal.in { opacity: 1; transform: translateY(0); }
 
 ::selection { background: var(--red); color: var(--ink); }
+
+/* --- Sample report generator --- */
+.sample-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-top: 32px; flex-wrap: wrap;
+}
+.sample-meta { font-size: 13px; color: var(--ink-3); }
+.sample-actions { display: flex; gap: 8px; }
+
+.sample-frame {
+  margin-top: 20px;
+  background: #FFFFFF;
+  color: #1a1a1a;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  border: 1px solid var(--line-2);
+}
+.rpt { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
+.rpt .muted { color: #6b7280; }
+.rpt .small { font-size: 12px; }
+.rpt .mono { font-family: 'JetBrains Mono', monospace; }
+
+.rpt-cover {
+  padding: 28px 36px;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%);
+  border-bottom: 1px solid #e5e7eb;
+}
+.rpt-cover-mark { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; color: #0f172a; }
+.rpt-cover-title { margin-top: 12px; font-size: 22px; font-weight: 600; color: #0f172a; letter-spacing: -0.01em; }
+.rpt-cover-line { font-size: 13px; color: #334155; margin-top: 4px; }
+
+.rpt-tabs {
+  display: flex; gap: 0; border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc; overflow-x: auto;
+}
+.rpt-tab {
+  padding: 14px 18px; font-size: 13px; font-weight: 500;
+  color: #64748b; border-bottom: 2px solid transparent;
+  transition: all .15s var(--ease); white-space: nowrap;
+  background: transparent; cursor: pointer;
+}
+.rpt-tab:hover { color: #0f172a; }
+.rpt-tab.active { color: #0f172a; border-bottom-color: #E63E48; background: #fff; }
+
+.rpt-body { padding: 28px 36px; min-height: 480px; background: #fff; }
+.rpt-loading { color: #94a3b8; font-style: italic; padding: 80px 0; text-align: center; }
+
+.rpt-section { animation: fadeIn .3s var(--ease); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+.rpt-section-title {
+  font-size: 16px; font-weight: 600; color: #0f172a;
+  border-bottom: 2px solid #0f172a; padding-bottom: 8px; margin-bottom: 20px;
+  display: inline-block;
+}
+.rpt-sub { font-size: 13px; font-weight: 600; color: #0f172a; margin-top: 24px; margin-bottom: 8px; }
+.rpt-line { font-size: 13px; color: #334155; line-height: 1.6; margin: 8px 0; }
+
+.rpt-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+.rpt-table td { padding: 8px 12px; font-size: 13px; vertical-align: top; border-bottom: 1px solid #f1f5f9; }
+.rpt-table td.k { color: #64748b; width: 40%; }
+.rpt-table td.v { color: #0f172a; }
+.rpt-table .v-strong { font-weight: 600; font-size: 15px; }
+.rpt-table .v-warn { color: #E63E48; }
+.rpt-table .v-good { color: #10b981; }
+.rpt-table.rpt-stats td { width: auto; }
+.rpt-table.rpt-stats td.k { width: 30%; }
+
+.rpt-acct-head { background: #f8fafc; padding: 12px !important; }
+.rpt-acct-num { color: #94a3b8; font-family: 'JetBrains Mono', monospace; margin-right: 8px; }
+.rpt-lender { font-weight: 600; color: #0f172a; }
+
+.rpt-scorecard { display: flex; align-items: center; gap: 24px; padding: 20px; background: #f8fafc; border-radius: 8px; margin: 16px 0; }
+.rpt-score-circle {
+  width: 96px; height: 96px; border-radius: 50%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; flex-shrink: 0;
+  border: 3px solid #36D6FF;
+}
+.rpt-score-circle .grade { font-size: 32px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.rpt-score-circle .num { font-size: 11px; color: #94a3b8; margin-top: 4px; font-family: 'JetBrains Mono', monospace; }
+.rpt-score-meta { font-size: 13px; color: #334155; line-height: 1.6; }
+
+.rpt-inq th { text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; color: #64748b; border-bottom: 2px solid #e5e7eb; }
+.rpt-inq td { padding: 10px 12px; font-size: 13px; }
+
+.rpt-list { padding-left: 24px; margin: 8px 0; }
+.rpt-list li { font-size: 13px; color: #334155; padding: 3px 0; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em; }
+
+.rpt-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 36px; border-top: 1px solid #e5e7eb;
+  background: #f8fafc; font-size: 12px; color: #64748b;
+}
+.rpt-page { font-family: 'JetBrains Mono', monospace; }
+
+@media (max-width: 760px) {
+  .rpt-cover, .rpt-body, .rpt-footer { padding-left: 20px; padding-right: 20px; }
+  .rpt-tabs { padding: 0 8px; }
+  .rpt-tab { padding: 12px 10px; font-size: 11px; }
+  .rpt-scorecard { flex-direction: column; align-items: flex-start; }
+}
+
 </style>
 </head>
 <body>
@@ -665,6 +770,65 @@ footer { border-top: 1px solid var(--line); padding: 48px 0 32px; margin-top: 60
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+
+<section class="section" id="sample">
+  <div class="container">
+    <div class="eyebrow reveal">样本 · What BlueBull actually produces</div>
+    <h2 class="reveal">A live sample credit report.<br><span class="cjk" style="color: var(--ink-2); font-weight: 500;">全部合成數據 · 不含任何個人資訊。</span></h2>
+    <p class="lead reveal" style="margin-top: 20px;">
+      This is what a borrower sees when they pull their BlueBull report — same shape as a TransUnion HK report, but the data
+      behind every field is generated on the fly. <b>None of the names, HKIDs, phones, addresses, or account numbers below
+      belong to a real person.</b> They are produced by the same privacy-computing stack the production bureau runs on.
+    </p>
+
+    <div class="sample-toolbar reveal">
+      <div class="sample-meta">
+        <span class="muted">Reference:</span> <span class="mono" id="sampleRef">—</span>
+        <span class="muted" style="margin-left: 16px;">Report date:</span> <span class="mono" id="sampleDate">—</span>
+      </div>
+      <div class="sample-actions">
+        <button class="btn" id="sampleRegen">↻ Generate another</button>
+        <button class="btn btn-ghost" id="samplePdf">→ Print / PDF</button>
+      </div>
+    </div>
+
+    <div class="sample-frame reveal" id="sampleFrame">
+      <div class="rpt">
+        <div class="rpt-cover">
+          <div class="rpt-cover-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" width="20" height="20"><path d="M3 12 L12 3 L21 12 L12 21 Z" stroke="#36D6FF"/><path d="M8 9 L8 5 M16 9 L16 5" stroke="#36D6FF" stroke-linecap="round"/><circle cx="12" cy="14" r="2.5" fill="#E63E48"/></svg>
+            <span>BlueBull</span>
+          </div>
+          <div class="rpt-cover-title">個人信貸報告 · Personal Credit Report</div>
+          <div class="rpt-cover-line" id="coverName">—</div>
+          <div class="rpt-cover-line muted" id="coverMeta">—</div>
+        </div>
+
+        <div class="rpt-tabs" id="rptTabs">
+          <button class="rpt-tab active" data-tab="summary">Summary · 總覽</button>
+          <button class="rpt-tab" data-tab="personal">Personal · 個人</button>
+          <button class="rpt-tab" data-tab="score">Score · 評分</button>
+          <button class="rpt-tab" data-tab="accounts">Accounts · 賬戶</button>
+          <button class="rpt-tab" data-tab="inquiries">Inquiries · 查詢</button>
+        </div>
+
+        <div class="rpt-body" id="rptBody">
+          <div class="rpt-loading">· generating sample…</div>
+        </div>
+
+        <div class="rpt-footer">
+          <div>© BlueBull · Synthetic data for demonstration only. 不包含個人資訊。</div>
+          <div class="rpt-page"><span id="rptPage">1</span> / <span id="rptTotal">5</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="muted small reveal" style="margin-top: 16px; text-align: center;">
+      生成每次點可产生一個新的合成報告。所有人名、身份證號碼、電話、地址、記載號都是隨機生成，並不對應任何真實個人。
+    </p>
   </div>
 </section>
 
@@ -1296,6 +1460,421 @@ async function runDemo() {
   demoRun.disabled = false;
 }
 demoRun.addEventListener('click', runDemo);
+
+
+// ----- Synthetic data generator (client-side, no PII) -----
+const HK_LENDERS = [
+  "BlueBull Capital Securities (HK) Limited",
+  "Ping An One Connect Bank (Hong Kong) Limited",
+  "HSBC Hong Kong",
+  "Hang Seng Bank, Limited",
+  "Standard Chartered Bank (Hong Kong) Limited",
+  "Bank of China (Hong Kong) Limited",
+  "Citibank (Hong Kong) Limited",
+  "DBS Bank (Hong Kong) Limited",
+  "Mox Bank Limited",
+  "ZA Bank Limited",
+  "WeLab Bank Limited",
+  "Airstar Bank Limited",
+  "Livi Bank Limited",
+  "Fubon Bank (Hong Kong) Limited",
+  "Public Bank (Hong Kong) Limited",
+  "BOCOM Hong Kong Branch",
+];
+const HK_DISTRICTS = ["CENTRAL","WAN CHAI","CAUSEWAY BAY","QUARRY BAY","TAI KOO","NORTH POINT","HUNG HOM","TSIM SHA TSUI","MONG KOK","YAU MA TEI","SHAM SHUI PO","LAI CHI KOK","MEI FOO","TSUEN WAN","TUEN MUN","YUEN LONG","TIN SHUI WAI","FANLING","SHEUNG SHUI","TAI PO","SHA TIN","MA ON SHAN","SAI KUNG","TSEUNG KWAN O","KWUN TONG"];
+const HK_STREETS = ["QUEEN'S ROAD","HENNESSY ROAD","NATHAN ROAD","CANTON ROAD","DES VOEUX ROAD","CONNAUGHT ROAD","GARDEN ROAD","HARCOURT ROAD","JOHNSTON ROAD","LOCKHART ROAD","CHA KWO LING ROAD","WAI YIP STREET","HUNG HOM BYPASS","CASTLE PEAK ROAD","TUEN MUN HEUNG SIEW STREET","SHA TIN RURAL ROAD","TAI PO TAI WO ROAD","FANLING HIGHWAY"];
+const SURNAMES = ["CHAN","WONG","LAM","LEE","CHEUNG","HO","TSE","NG","WANG","LI","ZHANG","LIU","CHEN","YANG","HUANG","CHENG","LEUNG","KWOK","LAU","AU","FUNG","MOK","TAM","CHOW","CHU","IP","LO","SO","YIP","YEUNG"];
+const GIVEN_FIRST = ["YIN","KIT","WAI","CHI","MING","FONG","KAI","HO","TUNG","CHUN","HING","WING","SHING","FUK","CHIU","HUNG","SUM","MAN","YEE","LING","MEI","HAN","YI","CHEN","BO","YAO","LEI","FEI","TAO"];
+const GIVEN_SECOND = ["KI","LUNG","TAK","HANG","WAH","HONG","KEUNG","FUN","PAN","FAI","KIT","LEUNG","YUEN","ON","FONG","SHING","WING","HEI","LAM","YIN","MEI","HAN"];
+const ACCT_TYPES = [
+  ["Visa 白金及Infinite及高級別信用卡","card"],
+  ["萬事達白金及高級別信用卡","card"],
+  ["非Visa Classic或萬事達信用卡相等級別的信用卡","card"],
+  ["非Visa及萬事達白金及高級別信用卡","card"],
+  ["無抵押分期貸款","loan"],
+  ["有抵押分期貸款","loan"],
+  ["循環貸款","loan"],
+  ["信用卡分期貸款","card-installment"],
+];
+
+const pick = (a) => a[Math.floor(Math.random() * a.length)];
+const rand = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+const randf = (a, b) => a + Math.random() * (b - a);
+
+function todayStr() {
+  const d = new Date();
+  const dd = String(d.getDate()).padStart(2, '0');
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  return dd + '-' + mm + '-' + d.getFullYear();
+}
+function pastDateStr(yearsAgo) {
+  const d = new Date();
+  d.setDate(d.getDate() - rand(0, Math.floor(yearsAgo * 365)));
+  const dd = String(d.getDate()).padStart(2, '0');
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  return dd + '-' + mm + '-' + d.getFullYear();
+}
+function pastDateStrRecent() { return pastDateStr(1); }
+function genHKID() {
+  const L = "ABCDEFGHJKLMNPQRSTUVWXYZ";
+  const D = "0123456789";
+  return pick(L.split('')) + Array.from({length: 6}, () => pick(D.split(''))).join('') + '(' + pick((D + 'A').split('')) + ')';
+}
+function genPhone() {
+  return pick(['2','3','5','6','9']) + Array.from({length: 7}, () => pick('0123456789'.split(''))).join('');
+}
+function genName() {
+  return pick(SURNAMES) + ' ' + pick(GIVEN_FIRST) + ' ' + pick(GIVEN_SECOND);
+}
+function genAddress() {
+  const floor = rand(1, 38);
+  const block = pick(['BLOCK ' + pick('ABCDEFGH'.split('')), 'TOWER ' + rand(1,9), 'PHASE ' + rand(1,5)]);
+  const num = rand(1, 200);
+  return 'FLAT ' + floor + ' ' + block + ' NO. ' + num + ' ' + pick(HK_STREETS) + ' ' + pick(HK_DISTRICTS) + ' HK';
+}
+function maskAcct(n) {
+  const len = rand(10, 18);
+  let s = '';
+  for (let i = 0; i < len; i++) s += Math.floor(Math.random() * 10);
+  return s.slice(0, 6) + 'x'.repeat(Math.max(0, s.length - 6));
+}
+function gradeForScore(score) {
+  const bands = [[3700,'A'],[3500,'B'],[3300,'C'],[3100,'D'],[2900,'E'],[2700,'F'],[2500,'G'],[2300,'H'],[2100,'I'],[0,'J']];
+  for (const [t, l] of bands) if (score >= t) return l;
+  return 'J';
+}
+function genScore() {
+  const w = Math.random();
+  const band = w < 0.35 ? 'high' : (w < 0.85 ? 'mid' : 'low');
+  let score;
+  if (band === 'high') score = rand(3200, 3850);
+  else if (band === 'mid') score = rand(2400, 3200);
+  else score = rand(1100, 2400);
+  return { score, grade: gradeForScore(score), band };
+}
+function genAccounts(band) {
+  const numActive = rand(6, 9);
+  const numClosed = rand(3, 6);
+  const accts = [];
+  for (let i = 0; i < numActive; i++) {
+    const [type, kind] = pick(ACCT_TYPES);
+    const lender = pick(HK_LENDERS);
+    const opened = pastDateStr(randf(1, 12));
+    let limit;
+    if (kind === 'card' || kind === 'card-installment') limit = pick([20000,30000,50000,80000,100000,150000,200000,250000,300000]);
+    else if (kind === 'loan') limit = pick([30000,50000,80000,100000,200000,300000,500000,800000]);
+    else limit = pick([50000,100000,200000]);
+    let util;
+    if (band === 'high') util = randf(0.05, 0.35);
+    else if (band === 'mid') util = randf(0.20, 0.65);
+    else util = randf(0.45, 0.95);
+    let balance = Math.floor(limit * util);
+    if (Math.random() < 0.1) balance = 0;
+    const monthly = kind === 'loan' ? Math.floor(balance / rand(12, 60)) : null;
+    const reported = pastDateStrRecent();
+    const lastPayment = Math.random() < 0.7 ? reported : null;
+    let lastPaymentAmt = lastPayment ? pick([1500,2000,2500,3000,5000,7000,10000,15000]) : null;
+    if (lastPaymentAmt && lastPaymentAmt > balance) lastPaymentAmt = balance > 0 ? balance : null;
+    const term = kind === 'loan' ? pick([12,24,36,48,60,72,120]) : null;
+    let status = '活躍';
+    if (Math.random() < 0.05) { status = '沒有交易紀錄的賬戶'; balance = 0; }
+    accts.push({ lender, type, limit, balance, opened, reported, last_payment: lastPayment, last_payment_amt: lastPaymentAmt, term, monthly, status, account_num: maskAcct(), kind, active: true });
+  }
+  for (let i = 0; i < numClosed; i++) {
+    const [type, kind] = pick(ACCT_TYPES);
+    const lender = pick(HK_LENDERS);
+    const opened = pastDateStr(randf(2, 15));
+    const limit = kind === 'loan' ? pick([30000,50000,80000,100000,200000,300000]) : pick([20000,30000,50000,80000,100000,150000]);
+    const end = pastDateStr(randf(0, 2));
+    const lastPaymentAmt = Math.random() < 0.6 ? pick([500,800,1200,2500,5000]) : null;
+    const term = kind === 'loan' ? pick([12,24,36,60]) : null;
+    accts.push({ lender, type, limit, balance: 0, opened, end, last_payment_amt: lastPaymentAmt, term, status: '結束', account_num: maskAcct(), kind, active: false });
+  }
+  return accts;
+}
+function genInquiries() {
+  const num = rand(2, 5);
+  const numOther = rand(3, 7);
+  const out = [];
+  for (let i = 0; i < num; i++) {
+    out.push({ lender: pick(HK_LENDERS), date: pastDateStr(randf(0, 2)), type: pick(['無抵押分期貸款','信用卡','按揭貸款','私人貸款']), amount: pick([50000,100000,150000,200000,300000,500000,800000,1000000]), kind: 'application' });
+  }
+  for (let i = 0; i < numOther; i++) {
+    const first = pastDateStr(randf(0, 2));
+    out.push({ lender: pick(HK_LENDERS), first, last: pastDateStr(randf(0, 1)), type: pick(['信用卡','無抵押分期貸款','私人貸款']), purpose: '檢討現有信貸安排', kind: 'review' });
+  }
+  return out;
+}
+function generateReport() {
+  const { score, grade, band } = genScore();
+  const accounts = genAccounts(band);
+  const inquiries = genInquiries();
+  const active = accounts.filter(a => a.active);
+  const total_balance = active.reduce((s, a) => s + a.balance, 0);
+  const total_limit = active.reduce((s, a) => s + a.limit, 0);
+  const utilization = total_limit > 0 ? total_balance / total_limit : 0;
+  // Years: parse oldest
+  let years = 1;
+  if (active.length) {
+    const oldest = active.map(a => a.opened).sort()[0]; // dd-mm-yyyy
+    const [d, m, y] = oldest.split('-').map(Number);
+    years = Math.max(1, Math.floor((Date.now() - new Date(y, m - 1, d)) / (365 * 24 * 60 * 60 * 1000)));
+  }
+  const overdue = active.filter(a => a.balance > a.limit * 0.95).length;
+  let factor;
+  if (utilization > 0.7 || band === 'low') factor = '你大部份信貸賬戶的信貸額使用度偏高。建議保持所有信貸賬戶的信貸額使用度不超過 50%，有助建立良好的信貸習慣，或可為你的信貸評分帶來正面影響。';
+  else if (band === 'high') factor = '你的信貸歷史長度、信貸使用率及還款紀錄整體良好。維持目前的還款節奏，並避免短期內同時開立多個新信貸賬戶。';
+  else factor = '你的信貸使用率略高於建議水平。將信用卡結餘調低至信用額的 30% 以下，通常可在未來 3–12 個月內改善你的信貸評分。';
+  const refRand = () => Math.floor(Math.random() * 10);
+  const ref_id = Array.from({length: 15}, refRand).join('') + 'Z31/10002';
+  return {
+    name: genName(),
+    hkid: genHKID(),
+    dob: pastDateStr(randf(22, 60)),
+    phones: Array.from({length: rand(3,7)}, genPhone),
+    addresses: Array.from({length: rand(4,8)}, genAddress),
+    score, grade, score_band: band, score_factor: factor,
+    total_balance, total_limit, utilization, years,
+    inquiries_count: inquiries.filter(i => i.kind === 'application').length,
+    other_inq_count: inquiries.filter(i => i.kind === 'review').length,
+    public_records: 0,
+    total_accounts: accounts.length,
+    active_count: active.length,
+    closed_count: accounts.length - active.length,
+    overdue_count: overdue,
+    accounts, inquiries,
+    report_date: todayStr(),
+    ref_id,
+  };
+}
+window.BLUEBULL = { generateReport };
+
+// ============================================================
+// Sample report generator (synthetic data only — no real PII)
+// ============================================================
+// render_* functions are inlined as plain text because we built them in Python.
+// We use a data-attribute approach: server-renders the section, JS calls
+// the render functions exposed via the global `BLUEBULL_RENDER` object.
+
+const fmtDate = (d) => d ? d.replace(/-/g, '-') : '-';
+
+let currentReport = null;
+let currentTab = 'summary';
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[c]);
+}
+
+const fmtMoney = (n) => {
+  if (n == null) return '-';
+  if (n === 0) return 'HKD 0';
+  return 'HKD ' + n.toLocaleString('en-US');
+};
+
+const fmtDate2 = (d) => {
+  if (!d) return '-';
+  return d;
+};
+
+function rptSummary(r) {
+  const utilPct = Math.round(r.utilization * 100);
+  const utilClass = utilPct > 50 ? 'v-warn' : 'v-good';
+  const repay = (94 + (r.score - 1000) / 60).toFixed(1);
+  return `
+    <div class="rpt-section">
+      <div class="rpt-section-title">信貸報告總覽 / Report Summary</div>
+      <div class="rpt-line">以下是閣下於 <b>${fmtDate2(r.report_date)}</b> 的信貸報告總覽。</div>
+
+      <div class="rpt-sub">個人資料 / Personal</div>
+      <table class="rpt-table">
+        <tr><td class="k">姓名 / Name</td><td class="v">${escapeHtml(r.name)}</td></tr>
+        <tr><td class="k">出生日期 / DOB</td><td class="v">${fmtDate2(r.dob)}</td></tr>
+        <tr><td class="k">身份證號碼 / HKID</td><td class="v">香港身份證號碼 ${escapeHtml(r.hkid)}</td></tr>
+      </table>
+
+      <div class="rpt-sub">信貸評分 / Credit Score</div>
+      <div class="rpt-scorecard">
+        <div class="rpt-score-circle">
+          <div class="grade">${r.grade}</div>
+          <div class="num">${r.score}</div>
+        </div>
+        <div class="rpt-score-meta">
+          根據閣下信貸資料，截至 ${fmtDate2(r.report_date)} 閣下信貸評分列為 <b>${r.grade} 級 / ${r.score}</b>。<br>
+          範圍介乎 1000 至 4000，相對地劃分為 A 至 J 級，其中 A 為最高等級。
+        </div>
+      </div>
+
+      <div class="rpt-sub">賬戶及其他資料概覽 / Account Summary</div>
+      <table class="rpt-table rpt-stats">
+        <tr>
+          <td class="k">結餘總額 / Total balance<br><span class="muted">(只包括港幣結餘)</span></td>
+          <td class="v v-strong">${fmtMoney(r.total_balance)}</td>
+          <td class="k">建議百分比 &lt; 30%<br><span class="muted">使用度 / Utilization</span></td>
+          <td class="v v-strong ${utilClass}">${utilPct}%</td>
+        </tr>
+        <tr>
+          <td class="k">總信貸額度 / Total credit</td>
+          <td class="v">${fmtMoney(r.total_limit)}</td>
+          <td class="k">信貸年資 / Credit history</td>
+          <td class="v">${r.years} 年</td>
+        </tr>
+        <tr>
+          <td class="k">信貸查詢 / Credit inquiries</td>
+          <td class="v">${r.inquiries_count}</td>
+          <td class="k">公眾紀錄 / Public records</td>
+          <td class="v">${r.public_records}</td>
+        </tr>
+        <tr>
+          <td class="k">賬戶總數 / Total accounts</td>
+          <td class="v">${r.total_accounts}</td>
+          <td class="k">現有 / 結束</td>
+          <td class="v">${r.active_count} / ${r.closed_count}</td>
+        </tr>
+        <tr>
+          <td class="k">拖欠賬戶 / Delinquent</td>
+          <td class="v" colspan="3">${r.overdue_count}</td>
+        </tr>
+      </table>
+    </div>`;
+}
+
+function rptPersonal(r) {
+  const phoneList = r.phones.map(p => `<li>${escapeHtml(p)}</li>`).join('');
+  const addrList = r.addresses.map(a => `<li>${escapeHtml(a)}</li>`).join('');
+  return `
+    <div class="rpt-section">
+      <div class="rpt-section-title">個人資料 / Personal Information</div>
+      <div class="rpt-line">下列閣下個人資料，由閣下的信貸提供者提供：</div>
+      <div class="rpt-sub">聯絡電話號碼 / Contact numbers</div>
+      <div class="rpt-line muted small">包括最近二十個紀錄。</div>
+      <ol class="rpt-list">${phoneList}</ol>
+      <div class="rpt-sub">地址 / Addresses</div>
+      <div class="rpt-line muted small">包括最近二十個紀錄。</div>
+      <ol class="rpt-list">${addrList}</ol>
+    </div>`;
+}
+
+function rptScore(r) {
+  const repay = (94 + (r.score - 1000) / 60).toFixed(1);
+  return `
+    <div class="rpt-section">
+      <div class="rpt-section-title">信貸評分 / Credit Score</div>
+      <div class="rpt-line">根據閣下信貸資料，截至 ${fmtDate2(r.report_date)} 閣下信貸評分列為 <b>${r.grade} 級 / ${r.score}</b>。</div>
+      <div class="rpt-line">據以往資料統計，在評分日期後 12 個月內，在得到相同評分的人仕中，約有 <b>${repay}%</b> 的比例將會向信貸機構履行還款責任。</div>
+      <div class="rpt-sub">評分因素 / Scoring factor</div>
+      <div class="rpt-line">${escapeHtml(r.score_factor)}<br><span class="muted small">(參考編號 216B)</span></div>
+    </div>`;
+}
+
+function rptAccounts(r) {
+  const renderAcct = (a, i, active) => {
+    const reportedDate = active ? a.reported : a.end;
+    return `
+      <tr><td colspan="2" class="rpt-acct-head">
+        <span class="rpt-acct-num">${i}.</span>
+        <span class="rpt-lender">${escapeHtml(a.lender)}</span>
+      </td></tr>
+      <tr><td class="k">個人賬戶的持有人</td><td class="v">持有人</td></tr>
+      <tr><td class="k">賬戶號碼</td><td class="v mono">${escapeHtml(a.account_num)}</td></tr>
+      <tr><td class="k">開戶日期</td><td class="v">${fmtDate2(a.opened)}</td></tr>
+      <tr><td class="k">信用額度</td><td class="v">${fmtMoney(a.limit)}</td></tr>
+      <tr><td class="k">呈報日期 / 結束日期</td><td class="v">${fmtDate2(reportedDate)}</td></tr>
+      ${a.term ? `<tr><td class="k">還款期</td><td class="v">${a.term}</td></tr>` : ''}
+      <tr><td class="k">賬戶種類</td><td class="v">${escapeHtml(a.type)}</td></tr>
+      <tr><td class="k">賬戶狀態</td><td class="v">${escapeHtml(a.status)}</td></tr>
+      ${active ? `<tr><td class="k">現時結餘</td><td class="v">${fmtMoney(a.balance)}</td></tr>` : ''}
+      ${active && a.last_payment ? `<tr><td class="k">最後還款</td><td class="v">${fmtDate2(a.last_payment)}</td></tr>` : ''}
+      ${a.last_payment_amt ? `<tr><td class="k">最後還款金額</td><td class="v">${fmtMoney(a.last_payment_amt)}</td></tr>` : ''}
+      ${a.monthly ? `<tr><td class="k">每月還款</td><td class="v">${fmtMoney(a.monthly)}</td></tr>` : ''}
+    `;
+  };
+  const active = r.accounts.filter(a => a.active);
+  const closed = r.accounts.filter(a => !a.active);
+  const activeRows = active.map((a, i) => renderAcct(a, i + 1, true)).join('');
+  const closedRows = closed.map((a, i) => renderAcct(a, i + 1, false)).join('');
+  return `
+    <div class="rpt-section">
+      <div class="rpt-section-title">信貸賬戶資料 / Account Details</div>
+      <div class="rpt-line">下列賬戶資料，由閣下的信貸提供者提供：</div>
+      <div class="rpt-sub">現有信貸賬戶 / Active accounts (${active.length})</div>
+      <table class="rpt-table rpt-acct">${activeRows || '<tr><td class="muted">無現有賬戶</td></tr>'}</table>
+      <div class="rpt-sub" style="margin-top: 24px;">已結束信貸賬戶 / Closed accounts (${closed.length})</div>
+      <table class="rpt-table rpt-acct">${closedRows || '<tr><td class="muted">無已結束賬戶</td></tr>'}</table>
+    </div>`;
+}
+
+function rptInquiries(r) {
+  const apps = r.inquiries.filter(i => i.kind === 'application');
+  const others = r.inquiries.filter(i => i.kind === 'review');
+  const appRows = apps.map(i =>
+    `<tr><td class="v">${escapeHtml(i.lender)}</td><td class="v">${fmtDate2(i.date)}</td><td class="v">${escapeHtml(i.type)}</td><td class="v">${fmtMoney(i.amount)}</td></tr>`
+  ).join('');
+  const otherRows = others.map(i =>
+    `<tr><td class="v">${escapeHtml(i.lender)}</td><td class="v">${fmtDate2(i.first)}</td><td class="v">${fmtDate2(i.last)}</td><td class="v">${escapeHtml(i.type)}</td><td class="v">${escapeHtml(i.purpose)}</td></tr>`
+  ).join('');
+  return `
+    <div class="rpt-section">
+      <div class="rpt-section-title">申請信貸查詢 / Credit Inquiries</div>
+      <div class="rpt-line">以下是閣下的信貸提供者因應閣下的信貸申請作出查詢：</div>
+      <table class="rpt-table rpt-inq">
+        <thead><tr><th>信貸提供者 / Lender</th><th>查詢日期 / Date</th><th>賬戶種類 / Type</th><th>查詢金額 / Amount</th></tr></thead>
+        <tbody>${appRows || '<tr><td class="muted" colspan="4">無申請查詢紀錄</td></tr>'}</tbody>
+      </table>
+      <div class="rpt-sub" style="margin-top: 24px;">其他信貸查詢 / Account Reviews</div>
+      <div class="rpt-line muted small">此類查詢不影響信貸評分。</div>
+      <table class="rpt-table rpt-inq">
+        <thead><tr><th>信貸提供者</th><th>首次查詢</th><th>最後查詢</th><th>賬戶種類</th><th>用途</th></tr></thead>
+        <tbody>${otherRows || '<tr><td class="muted" colspan="5">無其他查詢紀錄</td></tr>'}</tbody>
+      </table>
+    </div>`;
+}
+
+// On page load, fetch a sample report
+async function loadSample() {
+  const rptBody = document.getElementById('rptBody');
+  if (rptBody) rptBody.innerHTML = '<div class="rpt-loading">· generating sample…</div>';
+  // Simulate a brief async load
+  await new Promise(r => setTimeout(r, 350));
+  const r = await window.BLUEBULL.generateReport();
+  currentReport = r;
+  document.getElementById('sampleRef').textContent = r.ref_id;
+  document.getElementById('sampleDate').textContent = r.report_date;
+  document.getElementById('coverName').textContent = r.name;
+  document.getElementById('coverMeta').textContent = `HKID ${r.hkid} · Report date ${r.report_date}`;
+  document.getElementById('rptTotal').textContent = '5';
+  showTab('summary');
+}
+
+function showTab(name) {
+  currentTab = name;
+  document.querySelectorAll('.rpt-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+  if (!currentReport) return;
+  const map = {
+    summary: rptSummary, personal: rptPersonal, score: rptScore,
+    accounts: rptAccounts, inquiries: rptInquiries,
+  };
+  const html = map[name](currentReport);
+  document.getElementById('rptBody').innerHTML = html;
+  const pageNums = { summary: 1, personal: 2, score: 3, accounts: 4, inquiries: 5 };
+  document.getElementById('rptPage').textContent = pageNums[name];
+}
+
+document.getElementById('sampleRegen').addEventListener('click', loadSample);
+document.querySelectorAll('.rpt-tab').forEach(t => {
+  t.addEventListener('click', () => showTab(t.dataset.tab));
+});
+document.getElementById('samplePdf').addEventListener('click', () => {
+  window.print();
+});
+
+// Eagerly fetch a sample on page load
+if (document.getElementById('sampleFrame')) {
+  // Small delay so the reveal animation has a chance to fire first
+  setTimeout(loadSample, 600);
+}
+
 
 // ============================================================
 // Cost calculator
